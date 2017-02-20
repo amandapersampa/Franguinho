@@ -8,4 +8,4 @@ addons:
     
 script:
   #- mvn test -B
-  - sonar-scanner
+  #- sonar-scanner
