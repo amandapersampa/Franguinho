@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Franguinho.iml" filepath="$PROJECT_DIR$/Franguinho.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Franguinho.iml" filepath="$PROJECT_DIR$/.idea/modules/Franguinho.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Franguinho_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Franguinho_main.iml" group="Franguinho" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Franguinho_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Franguinho_test.iml" group="Franguinho" />
     </modules>
   </component>
 </project>
