@@ -1,4 +1,8 @@
 language: java
+
+before_install:
+  - cd backend
+  
 jdk:
   - oraclejdk8
 
@@ -7,6 +11,5 @@ addons:
     token: 1abeb36b5e88237bb32d141cfb832530df398359
     
 script:
-  - cd backend
   - mvn test -B
   - sonar-scanner
