@@ -11,12 +11,12 @@ import br.edu.ifes.serra.model.Greeting;
 @RestController
 public class HomeController {
 
-	private static final String template = "Hello, %s!";
+	private static final String TEMPLATE = "Hello, %s!";
 	private final AtomicLong counter = new AtomicLong();
 
 	@RequestMapping("/")
 	public Greeting greeting(@RequestParam(value="name", defaultValue="World") String name) {
 		return new Greeting(counter.incrementAndGet(),
-				String.format(template, name));
+				String.format(TEMPLATE, name));
 	}
 }
