@@ -1,5 +1,0 @@
-br\edu\ifes\serra\config\Application.class
-br\edu\ifes\serra\model\Greeting.class
-br\edu\ifes\serra\config\MvcConfiguration.class
-br\edu\ifes\serra\controller\HomeController.class
-br\edu\ifes\serra\config\AppInitializer.class
