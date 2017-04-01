@@ -48,3 +48,11 @@ Temporary Items
 /target/
 
 backend/\.settings/
+
+backend/target/
+
+\.settings/
+
+\.project
+
+\.classpath
