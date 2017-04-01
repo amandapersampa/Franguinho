@@ -49,6 +49,16 @@ Temporary Items
 
 backend/\.settings/
 
+<<<<<<< HEAD
 backend/target/surefire-reports/
 
 backend/target/
+=======
+backend/target/
+
+\.settings/
+
+\.project
+
+\.classpath
+>>>>>>> desenvolvimento
