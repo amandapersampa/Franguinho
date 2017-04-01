@@ -48,3 +48,7 @@ Temporary Items
 /target/
 
 backend/\.settings/
+
+backend/target/surefire-reports/
+
+backend/target/
