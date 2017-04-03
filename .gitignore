@@ -48,3 +48,21 @@ Temporary Items
 /target/
 
 backend/\.settings/
+
+backend/target/surefire-reports/
+
+backend/target/
+
+\.settings/
+
+\.project
+
+\.classpath
+
+*.class
+
+*.lst
+
+*.jar
+
+*.original
