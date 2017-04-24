@@ -4,32 +4,32 @@ import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.Table;
+import javax.persistence.Id;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.annotation.Id;
 
-import br.edu.ifes.serra.model.dao.CardapioDAO;
-
-@Entity
-@Table(name = "CARDAPIO")
+@Entity(name = "CARDAPIO")
 public class Cardapio implements Serializable {
 
-	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-
 	@Id
-    @GeneratedValue
-    private Long id;
-	
-	@Autowired
-	private static CardapioDAO cardapioDAO; 
-	
-	public static Cardapio findById(Long cardCod){
-		return cardapioDAO.findById(cardCod);
+	@GeneratedValue
+	private Long cardCod;
+
+	private Long itemCod;
+
+	public Long getCardCod() {
+		return cardCod;
 	}
-	
+
+	public void setCardCod(Long cardCod) {
+		this.cardCod = cardCod;
+	}
+
+	public Long getItemCod() {
+		return itemCod;
+	}
+
+	public void setItemCod(Long itemCod) {
+		this.itemCod = itemCod;
+	}
+
 }

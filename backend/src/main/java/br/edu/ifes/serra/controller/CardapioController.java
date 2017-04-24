@@ -1,10 +1,8 @@
 package br.edu.ifes.serra.controller;
 
-import javax.validation.constraints.NotNull;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.edu.ifes.serra.model.Cardapio;
@@ -13,11 +11,19 @@ import br.edu.ifes.serra.service.CardapioService;
 @RestController
 public class CardapioController {
 
+	private final String name = "/cardapio";
 	@Autowired
 	private CardapioService cardapioService;
 	
-	@RequestMapping("/{cardCod}")
-	public Cardapio findById(@RequestParam @NotNull Long cardCod) {
+	@RequestMapping(name)
+	public Cardapio find() {
+		Cardapio c = new Cardapio();
+		c.setCardCod(1L);
+		return c;
+	}
+	
+	@RequestMapping(name+"/{cardCod}")
+	public Cardapio findById(@PathVariable(name="cardCod", required=true) Long cardCod) {
 		return cardapioService.findById(cardCod);
 	}
 }

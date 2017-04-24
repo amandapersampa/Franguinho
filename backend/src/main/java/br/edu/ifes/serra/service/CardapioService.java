@@ -1,15 +1,20 @@
 package br.edu.ifes.serra.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import br.edu.ifes.serra.model.Cardapio;
+import br.edu.ifes.serra.model.dao.CardapioDAO;
 
 @Service
 public class CardapioService {
 
-	@Transactional(rollbackFor = Exception.class)
+	@Autowired
+	private CardapioDAO cardapioDAO;
+	
+	
 	public Cardapio findById(Long cardCod){
-		return Cardapio.findById(cardCod);
+		return cardapioDAO.findByCardCod(cardCod);
 	}
+	
 }

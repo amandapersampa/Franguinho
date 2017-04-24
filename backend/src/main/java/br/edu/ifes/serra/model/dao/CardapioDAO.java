@@ -6,5 +6,6 @@ import br.edu.ifes.serra.model.Cardapio;
 
 public interface CardapioDAO extends Repository<Cardapio, Long> {
 
-	public Cardapio findById(Long cardCod);
+	public Cardapio findByCardCod(Long cardCod);
+
 }
