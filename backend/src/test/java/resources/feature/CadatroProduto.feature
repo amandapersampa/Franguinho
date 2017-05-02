@@ -5,7 +5,7 @@ O cliente vai cadatrar o produto
 Scenario: produto foi cadastrado com sucesso
     Given produto ainda nao foi cadastrado
     When  Eu quero cadastrar o produto 
-    Then  mensagem de sucesso 
+    Then  mensagem produto cadastrado com sucesso
   
 Scenario: produto já cadastrado
     Given produto já foi cadastrado

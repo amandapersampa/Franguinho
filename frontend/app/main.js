@@ -1,6 +1,6 @@
 var app = angular.module('MicroGerApp', ['ngRoute']);
 
-app.config(function ($routeProvider, $locationProvider) {
+app.config(function($routeProvider, $locationProvider) {
     $locationProvider.html5Mode({
         enabled: true,
         requireBase: false
@@ -8,6 +8,11 @@ app.config(function ($routeProvider, $locationProvider) {
     $routeProvider.when('/', {
         templateUrl: 'index.html'
     });
+
+    $routeProvider.when("/teste", {
+        templateUrl: 'teste.html'
+    });
+
     $routeProvider.when("/estoque", {
         templateUrl: '/views/Estoque/TelaPrincipalEstoque.html'
     });
@@ -16,6 +21,11 @@ app.config(function ($routeProvider, $locationProvider) {
         templateUrl: '/views/Pessoas/TelaPrincipalPessoa.html'
     });
 
+    $routeProvider.when("/cardapio", {
+        templateUrl: '/views/Pessoas/TelaPrincipalCardapio.html'
+    });
+
     $routeProvider.otherwise({ redirectTo: '/' });
+
 
 });
