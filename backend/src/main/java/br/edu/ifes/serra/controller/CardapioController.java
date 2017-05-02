@@ -2,6 +2,8 @@ package br.edu.ifes.serra.controller;
 
 import java.util.List;
 
+import javax.validation.constraints.NotNull;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -37,7 +39,7 @@ public class CardapioController {
 	}
 	
 	@RequestMapping(name = name+"/", method = RequestMethod.POST)
-	public Cardapio insert(@RequestBody Cardapio cardapio) {
+	public Cardapio insert(@RequestBody @NotNull Cardapio cardapio) {
 		return cardapioService.insert(cardapio);
 	}
 }
