@@ -8,6 +8,11 @@ app.config(function($routeProvider, $locationProvider) {
     $routeProvider.when('/', {
         templateUrl: 'index.html'
     });
+
+    $routeProvider.when("/teste", {
+        templateUrl: 'teste.html'
+    });
+
     $routeProvider.when("/estoque", {
         templateUrl: '/views/Estoque/TelaPrincipalEstoque.html'
     });
@@ -21,5 +26,6 @@ app.config(function($routeProvider, $locationProvider) {
     });
 
     $routeProvider.otherwise({ redirectTo: '/' });
+
 
 });
