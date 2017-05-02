@@ -1,7 +1,6 @@
-package br.edu.ifes.serra.controller;
+package br.edu.ifes.serra.steps;
 
 import br.edu.ifes.serra.model.Cardapio;
-import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;

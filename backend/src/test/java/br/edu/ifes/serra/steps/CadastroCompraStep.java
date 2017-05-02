@@ -1,4 +1,4 @@
-package br.edu.ifes.serra.controller;
+package br.edu.ifes.serra.steps;
 
 import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
