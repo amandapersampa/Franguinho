@@ -30,6 +30,10 @@ public class CardapioControllerTest {
 //	public void setup() {
 //		this.mockMvc = MockMvcBuilders.standaloneSetup(CardapioController.class).build();
 //	}
+	@Test
+	public void test(){
+		
+	}
 //
 //	@Test
 //	public void validate_get_address() throws Exception {
