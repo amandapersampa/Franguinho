@@ -2,6 +2,7 @@ package br.edu.ifes.serra.config;
 
 import java.util.Properties;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -13,41 +14,48 @@ import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
+import br.edu.ifes.serra.controller.ItemEstoqueController;
+import br.edu.ifes.serra.model.ItemDiverso;
+
 @SpringBootApplication
-@ComponentScan(basePackages={"br.edu.ifes.serra.controller","br.edu.ifes.serra.service"})
-@EntityScan(basePackages="br.edu.ifes.serra.model")
+@ComponentScan(basePackages = { "br.edu.ifes.serra.controller", "br.edu.ifes.serra.service" })
+@EntityScan(basePackages = "br.edu.ifes.serra.model")
 @EnableJpaRepositories("br.edu.ifes.serra.model.dao")
 public abstract class Application {
-    public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
-    }
-    
-    
-    @Bean
-    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
-        LocalContainerEntityManagerFactoryBean factoryBean = new LocalContainerEntityManagerFactoryBean();
-        JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
+	static ItemDiverso i = new ItemDiverso();
+	@Autowired
+	static ItemEstoqueController itemEstoqueController;
 
-        factoryBean.setJpaVendorAdapter(vendorAdapter);
+	public static void main(String[] args) {
+		SpringApplication.run(Application.class, args);
 
-        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setUsername("postgres");
-        dataSource.setPassword("1234");
-        dataSource.setUrl("jdbc:postgresql://localhost:5432/microger");
-        dataSource.setDriverClassName("org.postgresql.Driver");
+	}
 
-        factoryBean.setDataSource(dataSource);
+	@Bean
+	public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
+		LocalContainerEntityManagerFactoryBean factoryBean = new LocalContainerEntityManagerFactoryBean();
+		JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
 
-        Properties props = new Properties();
-        props.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
-        props.setProperty("hibernate.show_sql", "true");
-        props.setProperty("hibernate.hbm2ddl.auto", "update");
+		factoryBean.setJpaVendorAdapter(vendorAdapter);
 
-        factoryBean.setJpaProperties(props);
+		DriverManagerDataSource dataSource = new DriverManagerDataSource();
+		dataSource.setUsername("postgres");
+		dataSource.setPassword("ifes");
+		dataSource.setUrl("jdbc:postgresql://localhost:5432/microger");
+		dataSource.setDriverClassName("org.postgresql.Driver");
 
-        factoryBean.setPackagesToScan("br.edu.ifes.serra.model");
+		factoryBean.setDataSource(dataSource);
 
-        return factoryBean;
-    }
+		Properties props = new Properties();
+		props.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
+		props.setProperty("hibernate.show_sql", "true");
+		props.setProperty("hibernate.hbm2ddl.auto", "update");
+
+		factoryBean.setJpaProperties(props);
+
+		factoryBean.setPackagesToScan("br.edu.ifes.serra.model");
+
+		return factoryBean;
+	}
 
 }
