@@ -5,21 +5,43 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-public interface Entidade<T> extends Serializable {
+public abstract class Entidade<T extends Entidade<T, ID>, ID extends Serializable> implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
+	private final Repositorio<T, ID> repo;
+	
+	
+	protected Entidade(Repositorio<T, ID> repo){
+		this.repo = repo;
+	}
+	
+	@JsonIgnore
+	public T findById(ID id) {
+		return repo.findOne(id);
+	}
+	
+	@SuppressWarnings("unchecked")
+	@JsonIgnore
+	public void delete(){
+		repo.delete((T) this);
+	}
+
+	@SuppressWarnings("unchecked")
+	@JsonIgnore
+	public T insert() {
+		return repo.save((T) this);
+	}
+
+	@SuppressWarnings("unchecked")
+	@JsonIgnore
+	public T update() {
+		return repo.save((T) this);
+	}
 
 	@JsonIgnore
-	public Entidade<T> findById(Serializable id);
-
-	@JsonIgnore
-	public void delete();
-
-	@JsonIgnore
-	public Entidade<T> insert();
-
-	@JsonIgnore
-	public Entidade<T> update();
-
-	@JsonIgnore
-	public List<T> getList();
+	public List<T> getList() {
+		return repo.findAll();
+	}
 
 }

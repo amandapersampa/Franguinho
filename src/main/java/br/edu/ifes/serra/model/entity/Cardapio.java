@@ -1,8 +1,5 @@
 package br.edu.ifes.serra.model.entity;
 
-import java.io.Serializable;
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,8 +10,8 @@ import br.edu.ifes.serra.utils.Entidade;
 import br.edu.ifes.serra.utils.RepositorioVld;
 
 @Entity(name = "CARDAPIO")
-public class Cardapio implements Entidade<Cardapio> {
-	
+public class Cardapio extends Entidade<Cardapio, Long> {
+
 	@RepositorioVld
 	private static CardapioDAO cardapioDAO;
 
@@ -23,6 +20,10 @@ public class Cardapio implements Entidade<Cardapio> {
 	private Long idCardapio;
 
 	private Long itemCod;
+	
+	public Cardapio() {
+		super(cardapioDAO);
+	}
 
 	public Long getIdCardapio() {
 		return idCardapio;
@@ -40,30 +41,7 @@ public class Cardapio implements Entidade<Cardapio> {
 		this.itemCod = itemCod;
 	}
 
-	@Override
-	public Cardapio findById(Serializable id) {
-		return cardapioDAO.findOne((Long) id);
-	}
-
-	@Override
-	public void delete() {
-		cardapioDAO.delete(this);
-	}
-
-	@Override
-	public Cardapio insert() {
-		return cardapioDAO.save(this);
-	}
-
-	@Override
-	public Cardapio update() {
-		return cardapioDAO.save(this);
-	}
-
-	@Override
-	public List<Cardapio> getList() {
-		return cardapioDAO.findAll();
-	}
+	
 
 	@Override
 	public String toString() {

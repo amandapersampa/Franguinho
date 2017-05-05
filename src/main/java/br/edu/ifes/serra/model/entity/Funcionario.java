@@ -1,8 +1,5 @@
 package br.edu.ifes.serra.model.entity;
 
-import java.io.Serializable;
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,10 +10,14 @@ import br.edu.ifes.serra.utils.Entidade;
 import br.edu.ifes.serra.utils.RepositorioVld;
 
 @Entity(name = "FUNCIONARIO")
-public class Funcionario implements Entidade<Funcionario> {
+public class Funcionario extends Entidade<Funcionario, Long> {
 
 	@RepositorioVld
 	private static FuncionarioDAO funcionarioDAO;
+	
+	public Funcionario(){
+		super(funcionarioDAO);
+	}
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -58,31 +59,6 @@ public class Funcionario implements Entidade<Funcionario> {
 
 	public void setCpf(Long cpf) {
 		this.cpf = cpf;
-	}
-
-	@Override
-	public Entidade<Funcionario> findById(Serializable id) {
-		return funcionarioDAO.findOne((Long) id);
-	}
-
-	@Override
-	public void delete() {
-		funcionarioDAO.delete(this);
-	}
-
-	@Override
-	public Funcionario insert() {
-		return funcionarioDAO.save(this);
-	}
-
-	@Override
-	public Funcionario update() {
-		return funcionarioDAO.save(this);
-	}
-
-	@Override
-	public List<Funcionario> getList() {
-		return funcionarioDAO.findAll();
 	}
 
 	private static final long serialVersionUID = 1L;

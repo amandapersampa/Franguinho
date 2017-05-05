@@ -1,8 +1,5 @@
 package br.edu.ifes.serra.model.entity;
 
-import java.io.Serializable;
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,10 +10,15 @@ import br.edu.ifes.serra.utils.Entidade;
 import br.edu.ifes.serra.utils.RepositorioVld;
 
 @Entity(name = "PRODUTO")
-public class Produto implements Entidade<Produto>{
-	
+public class Produto extends Entidade<Produto, Long> {
+
 	@RepositorioVld
 	private static ProdutoDAO produtoDAO;
+
+	public Produto() {
+		super(produtoDAO);
+	}
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long idProduto;
@@ -26,9 +28,9 @@ public class Produto implements Entidade<Produto>{
 	private Integer quantidade;
 
 	private String unidade;
-	
+
 	private Long itemEstoqueVld;
-	
+
 	public Long getItemEstoqueVld() {
 		return itemEstoqueVld;
 	}
@@ -68,31 +70,7 @@ public class Produto implements Entidade<Produto>{
 	public void setUnidade(String unidade) {
 		this.unidade = unidade;
 	}
-	@Override
-	public Produto findById(Serializable id) {
-		return produtoDAO.findOne((Long) id);
-	}
 
-	@Override
-	public void delete() {
-		produtoDAO.delete(this);
-	}
-
-	@Override
-	public Produto insert() {
-		return produtoDAO.save(this);
-	}
-
-	@Override
-	public Produto update() {
-		return produtoDAO.save(this);
-	}
-
-	@Override
-	public List<Produto> getList() {
-		return produtoDAO.findAll();
-	}
-	
 	private static final long serialVersionUID = 1L;
 
 }

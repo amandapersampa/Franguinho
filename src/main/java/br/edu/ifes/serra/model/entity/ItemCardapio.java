@@ -1,8 +1,6 @@
 package br.edu.ifes.serra.model.entity;
 
-import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,10 +12,14 @@ import br.edu.ifes.serra.utils.Entidade;
 import br.edu.ifes.serra.utils.RepositorioVld;
 
 @Entity(name = "ITEM_CARDAPIO")
-public class ItemCardapio implements Entidade<ItemCardapio> {
+public class ItemCardapio extends Entidade<ItemCardapio, Long> {
 
 	@RepositorioVld
 	private static ItemCardapioDAO ItemCardapioDAO;
+
+	public ItemCardapio() {
+		super(ItemCardapioDAO);
+	}
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -59,31 +61,6 @@ public class ItemCardapio implements Entidade<ItemCardapio> {
 
 	public void setPreco(BigDecimal preco) {
 		this.preco = preco;
-	}
-
-	@Override
-	public Entidade<ItemCardapio> findById(Serializable id) {
-		return ItemCardapioDAO.findOne((Long) id);
-	}
-
-	@Override
-	public void delete() {
-		ItemCardapioDAO.delete(this);
-	}
-
-	@Override
-	public Entidade<ItemCardapio> insert() {
-		return ItemCardapioDAO.save(this);
-	}
-
-	@Override
-	public Entidade<ItemCardapio> update() {
-		return ItemCardapioDAO.save(this);
-	}
-
-	@Override
-	public List<ItemCardapio> getList() {
-		return ItemCardapioDAO.findAll();
 	}
 
 	private static final long serialVersionUID = 1L;

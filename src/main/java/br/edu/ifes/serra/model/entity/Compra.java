@@ -1,8 +1,6 @@
 package br.edu.ifes.serra.model.entity;
 
-import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,10 +12,14 @@ import br.edu.ifes.serra.utils.Entidade;
 import br.edu.ifes.serra.utils.RepositorioVld;
 
 @Entity(name = "COMPRA")
-public class Compra implements Entidade<Compra> {
+public class Compra extends Entidade<Compra, Long> {
 
 	@RepositorioVld
 	private static CompraDAO compraDAO;
+
+	public Compra() {
+		super(compraDAO);
+	}
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -59,31 +61,6 @@ public class Compra implements Entidade<Compra> {
 
 	public void setDia(Date dia) {
 		this.dia = dia;
-	}
-
-	@Override
-	public Compra findById(Serializable id) {
-		return compraDAO.findOne((Long) id);
-	}
-
-	@Override
-	public void delete() {
-		compraDAO.delete(this);
-	}
-
-	@Override
-	public Compra insert() {
-		return compraDAO.save(this);
-	}
-
-	@Override
-	public Compra update() {
-		return compraDAO.save(this);
-	}
-
-	@Override
-	public List<Compra> getList() {
-		return compraDAO.findAll();
 	}
 
 	@Override
