@@ -2,22 +2,23 @@ package br.edu.ifes.serra.service;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.edu.ifes.serra.model.entity.ItemEstoque;
+import br.edu.ifes.serra.model.entity.Produto;
+import br.edu.ifes.serra.utils.builders.ProdutoBuilder;
 
 @Service
-public class ItemEstoqueService {
-//	@Autowired
-//	private ItemEstoque itemEstoque;
-//
-//	
-//	public List<ItemEstoque> getList() {
-//		return itemEstoque.list();
-//	}
-//
-//	public ItemEstoque insert(ItemEstoque itemEstoque) {
-//		return itemEstoque.insert(itemEstoque);
-//	}
+public class EstoqueService {
+
+	public Produto findById(Long idItem) {
+		return ProdutoBuilder.build().findById(idItem);
+	}
+	
+	public List<Produto> getList() {
+		return ProdutoBuilder.build().getList();
+	}
+
+	public Produto insert(Produto itemEstoque) {
+		return itemEstoque.insert();
+	}
 }

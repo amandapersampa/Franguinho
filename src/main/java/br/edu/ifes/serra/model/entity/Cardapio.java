@@ -8,14 +8,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import br.edu.ifes.serra.model.dao.CardapioDAO;
+import br.edu.ifes.serra.utils.Entidade;
+import br.edu.ifes.serra.utils.RepositorioVld;
 
 @Entity(name = "CARDAPIO")
-public class Cardapio implements Serializable {
-
-	@Autowired
+public class Cardapio implements Entidade<Cardapio> {
+	
+	@RepositorioVld
 	private static CardapioDAO cardapioDAO;
 
 	@Id
@@ -40,16 +40,35 @@ public class Cardapio implements Serializable {
 		this.itemCod = itemCod;
 	}
 
-	public static Cardapio findById(Long cardCod) {
-		return cardapioDAO.findByIdCardapio(cardCod);
+	@Override
+	public Cardapio findById(Serializable id) {
+		return cardapioDAO.findOne((Long) id);
 	}
 
-	public static List<Cardapio> getList() {
+	@Override
+	public void delete() {
+		cardapioDAO.delete(this);
+	}
+
+	@Override
+	public Cardapio insert() {
+		return cardapioDAO.save(this);
+	}
+
+	@Override
+	public Cardapio update() {
+		return cardapioDAO.save(this);
+	}
+
+	@Override
+	public List<Cardapio> getList() {
 		return cardapioDAO.findAll();
 	}
 
-	public static Cardapio insert(Cardapio cardapio) {
-		return cardapioDAO.save(cardapio);
+	@Override
+	public String toString() {
+		return "Cardapio [idCardapio=" + idCardapio + ", itemCod=" + itemCod + "]";
 	}
-
+	
+	private static final long serialVersionUID = 1L;
 }

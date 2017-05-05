@@ -8,38 +8,36 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.edu.ifes.serra.model.ItemDiverso;
-import br.edu.ifes.serra.model.entity.ItemEstoque;
-import br.edu.ifes.serra.service.ItemEstoqueService;
+import br.edu.ifes.serra.model.entity.Produto;
+import br.edu.ifes.serra.service.EstoqueService;
 
 @RestController
-public class ItemEstoqueController {
-//	private final String name = "/ItemEstoque";
-//	@Autowired
-//	private ItemEstoqueService itemService;
-//
-//	 @RequestMapping(name)
-//	 public ItemEstoque find() {
-//	 ItemDiverso c = new ItemDiverso();
-//	 c.setNome("Coca-Cola");
-//	 return c;
-//	 }
-//
-//	// @RequestMapping(name + "/{idItem}")
-//	// public ItemEstoque findById(@PathVariable(name = "idItem", required =
-//	// true) Long cardCod) {
-//	// return itemService.findById(idItem);
-//	// }
-//
-//	@RequestMapping(name + "/list")
-//	public List<ItemEstoque> getList() {  
-//		return itemService.getList();
-//	}
-//
-//	@RequestMapping(name + "/")
-//	public String insert(@RequestBody ItemEstoque itemEstoque) {
-//		itemService.insert(itemEstoque);
-//
-//		return "sucesso";
-//	}
+public class EstoqueController {
+	private final String name = "/estoque";
+	@Autowired
+	private EstoqueService itemService;
+
+	@RequestMapping(name)
+	public Produto find() {
+		Produto c = new Produto();
+		c.setNome("Coca-Cola");
+		return c;
+	}
+
+	@RequestMapping(name + "/{idItem}")
+	public Produto findById(@PathVariable(name = "idItem", required = true) Long idItem) {
+		return itemService.findById(idItem);
+	}
+
+	@RequestMapping(name + "/list")
+	public List<Produto> getList() {
+		return itemService.getList();
+	}
+
+	@RequestMapping(name + "/")
+	public String insert(@RequestBody Produto itemEstoque) {
+		itemService.insert(itemEstoque);
+
+		return "sucesso";
+	}
 }

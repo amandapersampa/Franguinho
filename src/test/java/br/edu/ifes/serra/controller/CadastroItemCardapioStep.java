@@ -1,6 +1,5 @@
 package br.edu.ifes.serra.controller;
 
-import br.edu.ifes.serra.model.ItemDiverso;
 import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
