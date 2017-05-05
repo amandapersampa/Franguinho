@@ -1,8 +1,5 @@
 package br.edu.ifes.serra.model.entity;
 
-import java.io.Serializable;
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,11 +10,15 @@ import br.edu.ifes.serra.utils.Entidade;
 import br.edu.ifes.serra.utils.RepositorioVld;
 
 @Entity(name = "RESTAURANTE")
-public class Restaurante implements Entidade<Restaurante> {
+public class Restaurante extends Entidade<Restaurante, Long> {
 
 	@RepositorioVld
 	private static RestauranteDAO restauranteDAO;
 
+	public Restaurante() {
+		super(restauranteDAO);
+	}
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long idRestaurante;
@@ -62,31 +63,6 @@ public class Restaurante implements Entidade<Restaurante> {
 
 	public void setIdCardapio(Long idCardapio) {
 		this.idCardapio = idCardapio;
-	}
-
-	@Override
-	public Entidade<Restaurante> findById(Serializable id) {
-		return restauranteDAO.findOne((Long) id);
-	}
-
-	@Override
-	public void delete() {
-		restauranteDAO.delete(this);
-	}
-
-	@Override
-	public Restaurante insert() {
-		return restauranteDAO.save(this);
-	}
-
-	@Override
-	public Restaurante update() {
-		return restauranteDAO.save(this);
-	}
-
-	@Override
-	public List<Restaurante> getList() {
-		return restauranteDAO.findAll();
 	}
 
 	private static final long serialVersionUID = 1L;

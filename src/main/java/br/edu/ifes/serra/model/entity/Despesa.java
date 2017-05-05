@@ -14,11 +14,15 @@ import br.edu.ifes.serra.utils.Entidade;
 import br.edu.ifes.serra.utils.RepositorioVld;
 
 @Entity(name = "DESPESA")
-public class Despesa implements Entidade<Despesa> {
+public class Despesa extends Entidade<Despesa, Long> {
 
 	@RepositorioVld
 	private static DespesaDAO despesaDAO;
 
+	public Despesa(){
+		super(despesaDAO);
+	}
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long idDespesa;
@@ -59,31 +63,6 @@ public class Despesa implements Entidade<Despesa> {
 
 	public void setVldTipoDespesa(Long vldTipoDespesa) {
 		this.vldTipoDespesa = vldTipoDespesa;
-	}
-
-	@Override
-	public Entidade<Despesa> findById(Serializable id) {
-		return despesaDAO.findOne((Long) id);
-	}
-
-	@Override
-	public void delete() {
-		despesaDAO.delete(this);
-	}
-
-	@Override
-	public Despesa insert() {
-		return despesaDAO.save(this);
-	}
-
-	@Override
-	public Despesa update() {
-		return despesaDAO.save(this);
-	}
-
-	@Override
-	public List<Despesa> getList() {
-		return despesaDAO.findAll();
 	}
 
 	private static final long serialVersionUID = 1L;
