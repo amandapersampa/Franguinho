@@ -1,25 +1,27 @@
 package br.edu.ifes.serra.model.entity;
 
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import br.edu.ifes.serra.model.dao.ProdutoDAO;
+import br.edu.ifes.serra.utils.Entidade;
+import br.edu.ifes.serra.utils.RepositorioVld;
 
-import br.edu.ifes.serra.model.dao.ItemEstoqueDAO;
+@Entity(name = "PRODUTO")
+public class Produto extends Entidade<Produto, Long> {
 
-@Entity(name = "ITEM_ESTOQUE")
-public class ItemEstoque {
+	@RepositorioVld
+	private static ProdutoDAO produtoDAO;
 
-	@Autowired
-	private static ItemEstoqueDAO ItemEstoqueDAO;
+	public Produto() {
+		super(produtoDAO);
+	}
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long idItem;
+	private Long idProduto;
 
 	private String nome;
 
@@ -27,12 +29,22 @@ public class ItemEstoque {
 
 	private String unidade;
 
-	public Long getIdItem() {
-		return idItem;
+	private Long itemEstoqueVld;
+
+	public Long getItemEstoqueVld() {
+		return itemEstoqueVld;
 	}
 
-	public void setIdItem(Long idItem) {
-		this.idItem = idItem;
+	public void setItemEstoqueVld(Long itemEstoqueVld) {
+		this.itemEstoqueVld = itemEstoqueVld;
+	}
+
+	public Long getIdProduto() {
+		return idProduto;
+	}
+
+	public void setIdProduto(Long idProduto) {
+		this.idProduto = idProduto;
 	}
 
 	public String getNome() {
@@ -59,22 +71,6 @@ public class ItemEstoque {
 		this.unidade = unidade;
 	}
 
-	 public void delete() {
-	 // TODO Auto-generated method stub
-	
-	 }
-	 public ItemEstoque insert(ItemEstoque itemEstoque) {
-	 return ItemEstoqueDAO.save(itemEstoque);
-	
-	 }
-	
-	 public void update() {
-	 // TODO Auto-generated method stub
-	
-	 }
-	
-	 public static List<ItemEstoque> list() {
-	 return ItemEstoqueDAO.findAll();
-	 }
+	private static final long serialVersionUID = 1L;
 
 }

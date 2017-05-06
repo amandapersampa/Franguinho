@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.edu.ifes.serra.model.entity.Cardapio;
 import br.edu.ifes.serra.service.CardapioService;
+import br.edu.ifes.serra.utils.builders.CardapioBuilder;
 
 @RestController
 public class CardapioController {
@@ -23,7 +24,7 @@ public class CardapioController {
 	
 	@RequestMapping(produces ="application/json" ,name = url, method=RequestMethod.GET)
 	public Cardapio find() {
-		Cardapio c = new Cardapio();
+		Cardapio c = CardapioBuilder.build();
 		c.setIdCardapio(1L);
 		c.setItemCod(0L);
 		return c;

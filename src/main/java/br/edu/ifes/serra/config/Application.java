@@ -2,7 +2,6 @@ package br.edu.ifes.serra.config;
 
 import java.util.Properties;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -14,17 +13,11 @@ import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
-import br.edu.ifes.serra.controller.ItemEstoqueController;
-import br.edu.ifes.serra.model.ItemDiverso;
-
 @SpringBootApplication
 @ComponentScan(basePackages = { "br.edu.ifes.serra.controller", "br.edu.ifes.serra.service" })
-@EntityScan(basePackages = "br.edu.ifes.serra.model")
+@EntityScan(basePackages = "br.edu.ifes.serra.model.entity")
 @EnableJpaRepositories("br.edu.ifes.serra.model.dao")
 public abstract class Application {
-	static ItemDiverso i = new ItemDiverso();
-	@Autowired
-	static ItemEstoqueController itemEstoqueController;
 
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
