@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.edu.ifes.serra.model.Greeting;
 
 @RestController
+@RequestMapping("/")
 public class HomeController {
 
 	private static final String TEMPLATE = "Hello, %s!";
