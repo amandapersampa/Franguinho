@@ -1,5 +1,4 @@
 Feature: Despesas
-
 O cliente vai cadastrar as despesas
 
 	Scenario: Despesa variavel cadastrada com sucesso
