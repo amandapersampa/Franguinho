@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="MicroGerApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>MicroGerencia</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="js/script/bootstrap/css/estilo.css">
+    <link rel="stylesheet" href="js/script/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="js/script/bootstrap/css/bootstrap-theme.min.css">
+
+    <!-- Angular -->
+    <script src="js/script/angular.min.js"></script>
+    <script src="js/script/angular-route.js"></script>
+    <script src="js/script/angular-resource.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/controller/IndexController.js"></script>
+    <script src="js/controller/CardapioController.js"></script>
+    <script src="js/controller/EstoqueController.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="text-center">Micro Gerencia</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <ng-view></ng-view>
+    </div>
+</body>
+
+</html>
