@@ -1,8 +1,12 @@
-package br.edu.ifes.serra.config;
+package br.edu.ifes.serra;
 
+import java.util.Arrays;
 import java.util.Properties;
 //import org.apache.catalina.SessionIdGe
 
+import org.apache.catalina.core.ApplicationContext;
+import org.springframework.beans.factory.ListableBeanFactory;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -15,7 +19,7 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
 @SpringBootApplication
-@ComponentScan(basePackages = { "br.edu.ifes.serra.controller", "br.edu.ifes.serra.service" })
+@ComponentScan(basePackages = { "br.edu.ifes.serra.controller", "br.edu.ifes.serra.service",  "br.edu.ifes.serra.config"})
 @EntityScan(basePackages = "br.edu.ifes.serra.model.entity")
 @EnableJpaRepositories("br.edu.ifes.serra.model.dao")
 public abstract class Application {
