@@ -1,4 +1,4 @@
-var app = angular.module('MicroGerApp', [ 'ngRoute' ]);
+var app = angular.module('MicroGerApp', [ 'ngRoute', 'ngResource' ]);
 
 app.config(function($routeProvider, $provide, $httpProvider,
 				$locationProvider) {
