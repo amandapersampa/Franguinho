@@ -38,7 +38,7 @@ public class CardapioController {
 	
 	@RequestMapping("/list")
 	public List<Cardapio> getList() {
-		return cardapioService.getList();
+		return CardapioService.getList();
 	}
 	
 	@RequestMapping(name = "/", method = RequestMethod.POST)

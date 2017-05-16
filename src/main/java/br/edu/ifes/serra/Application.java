@@ -1,24 +1,25 @@
 package br.edu.ifes.serra;
 
-import java.util.Arrays;
 import java.util.Properties;
 //import org.apache.catalina.SessionIdGe
 
-import org.apache.catalina.core.ApplicationContext;
-import org.springframework.beans.factory.ListableBeanFactory;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @SpringBootApplication
+@Configuration
 @ComponentScan(basePackages = { "br.edu.ifes.serra.controller", "br.edu.ifes.serra.service",  "br.edu.ifes.serra.config"})
 @EntityScan(basePackages = "br.edu.ifes.serra.model.entity")
 @EnableJpaRepositories("br.edu.ifes.serra.model.dao")
@@ -54,5 +55,15 @@ public abstract class Application {
 
 		return factoryBean;
 	}
+	
+	 @Bean
+	    public WebMvcConfigurer corsConfigurer() {
+	        return new WebMvcConfigurerAdapter() {
+	            @Override
+	            public void addCorsMappings(CorsRegistry registry) {
+	                registry.addMapping("/greeting-javaconfig").allowedOrigins("http://localhost:9000");
+	            }
+	        };
+	    }
 
 }

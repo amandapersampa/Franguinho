@@ -14,7 +14,7 @@ public class CardapioService {
 		return CardapioBuilder.build().findById(cardCod);
 	}
 
-	public List<Cardapio> getList() {
+	public static List<Cardapio> getList() {
 		return CardapioBuilder.build().getList();
 	}
 
