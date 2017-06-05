@@ -1,9 +1,20 @@
-/target/
-/bin/
 
-\.settings/
+\.idea/
 
-\.classpath
+build/
 
-\.project
-/target/
+dist/
+
+fastFrango/__pycache__/
+
+__pycache__/
+
+venv/
+
+*.pyc
+
+\.scannerwork/
+
+\.cache/v/cache/
+
+migrations/
