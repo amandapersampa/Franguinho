@@ -1,13 +1,8 @@
 \.idea/
-
 build/
-
 dist/
-
 fastFrango/__pycache__/
-
 __pycache__/
-
 *.pyc
 
 \.scannerwork/
@@ -15,3 +10,7 @@ __pycache__/
 \.cache/v/cache/
 
 migrations/
+
+venv
+staticfiles
+.env
