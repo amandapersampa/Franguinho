@@ -7,14 +7,18 @@ branches:
   only:
      - master
      - desenvolvimento
+     
+install:
+    - sudo pip install -r requirements.txt
+    - sudo python setup.py sdist
 
 addons:
   sonarqube:
     token: 1abeb36b5e88237bb32d141cfb832530df398359
     
 script:
-  - mvn test -B
-  - sonar-scanner
+    - pytest
+    - sonar-scanner
 
 notifications:
   slack: trabalho-de-les-20171:VPGJMy9q3QpahFd5WXIQ6xTG
