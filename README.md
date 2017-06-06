@@ -1,4 +1,6 @@
-FastFrango
+﻿FastFrango
+
+virtualenv venv
 
 .\venv\Scripts\activate - ativar venv
 
