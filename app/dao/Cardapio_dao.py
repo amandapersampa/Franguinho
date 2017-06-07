@@ -1,6 +1,5 @@
-from app import db
 from app.models.Compra import Compra
-from sqlalchemy.orm import relationship
+from app import db
 
 
 class Cardapio_dao(db.Model):

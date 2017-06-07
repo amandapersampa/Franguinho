@@ -1,6 +1,7 @@
-from app import db
-from app.models.Unidade_medida import Unidade_medida
 from sqlalchemy.orm import relationship
+
+from app.models.Unidade_medida import Unidade_medida
+from app import db
 
 
 class Unidade_medida_dao(db.Model):

@@ -1,5 +1,5 @@
-from app.dao.Compra_dao import Compra_dao
-from app.dao.Produto_dao import Produto_dao
+from app import Compra_dao
+from app import Produto_dao
 
 
 class Compra_service(object):
