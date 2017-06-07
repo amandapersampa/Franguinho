@@ -8,12 +8,14 @@ Sistema para gerenciamento do restaurante FastFrango
 ## Como Rodar:
 
 
-###primeiramente atualizar o ambiente virtual:
+###primeiramente inicializar o ambiente virtual:
 	$ virtualenv venv
 ###ativar venv:
 	$ \venv\Scripts\activate
 ###baixar os requisitos:
 	$ pip install -r requirements.txt
+###adicioner novos requirements:
+	$ pip freeze > requirements.txt
 ###criar o banco no postgres:
 	
 ###Iniciar o projeto
