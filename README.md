@@ -10,7 +10,17 @@ virtualenv venv
 
 .\venv\Scripts\activate - ativar venv
 
-pip freeze > requirements.txt - criar o arquivo requirements.txt
+###primeiramente inicializar o ambiente virtual:
+	$ virtualenv venv
+###ativar venv:
+	$ \venv\Scripts\activate
+###baixar os requisitos:
+	$ pip install -r requirements.txt
+###adicioner novos requirements:
+	$ pip freeze > requirements.txt
+###criar o banco no postgres:
+	
+###Iniciar o projeto
 
 E necessário criar o banco no postgres antes
 	run.py db init - inicializar o banco
