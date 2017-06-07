@@ -17,7 +17,8 @@ Sistema para gerenciamento do restaurante FastFrango
 ###adicioner novos requirements:
 	$ pip freeze > requirements.txt
 ###criar o banco no postgres:
-	
+	$ no pgadmin crie um novo banco: teste
+		[['postgresql://postgres:1234@localhost:5432/teste']]	
 ###Iniciar o projeto
 
 
