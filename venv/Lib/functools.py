@@ -449,7 +449,7 @@ def _make_key(args, kwds, typed,
 def lru_cache(maxsize=128, typed=False):
     """Least-recently-used cache decorator.
 
-    If *maxsize* is set to None, the LRU features are disabled and the cache
+    If *maxsize* is set to None, the LRU test are disabled and the cache
     can grow without bound.
 
     If *typed* is True, arguments of different types will be cached separately.

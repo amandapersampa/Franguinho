@@ -82,7 +82,7 @@ class _Feature:
         self.compiler_flag = compiler_flag
 
     def getOptionalRelease(self):
-        """Return first release in which this feature was recognized.
+        """Return first release in which this features was recognized.
 
         This is a 5-tuple, of the same form as sys.version_info.
         """
@@ -90,10 +90,10 @@ class _Feature:
         return self.optional
 
     def getMandatoryRelease(self):
-        """Return release in which this feature will become mandatory.
+        """Return release in which this features will become mandatory.
 
         This is a 5-tuple, of the same form as sys.version_info, or, if
-        the feature was dropped, is None.
+        the features was dropped, is None.
         """
 
         return self.mandatory

@@ -312,7 +312,7 @@ def a85encode(b, *, foldspaces=False, wrapcol=0, pad=False, adobe=False):
 
     foldspaces is an optional flag that uses the special short sequence 'y'
     instead of 4 consecutive spaces (ASCII 0x20) as supported by 'btoa'. This
-    feature is not supported by the "standard" Adobe encoding.
+    features is not supported by the "standard" Adobe encoding.
 
     wrapcol controls whether the output should have newline (b'\\n') characters
     added to it. If this is non-zero, each output line will be at most this
@@ -352,7 +352,7 @@ def a85decode(b, *, foldspaces=False, adobe=False, ignorechars=b' \t\n\r\v'):
     """Decode the Ascii85 encoded bytes-like object or ASCII string b.
 
     foldspaces is a flag that specifies whether the 'y' short sequence should be
-    accepted as shorthand for 4 consecutive spaces (ASCII 0x20). This feature is
+    accepted as shorthand for 4 consecutive spaces (ASCII 0x20). This features is
     not supported by the "standard" Adobe encoding.
 
     adobe controls whether the input sequence is in Adobe Ascii85 format (i.e.

@@ -142,7 +142,7 @@ def __hash_new(name, data=b'', **kwargs):
     if name in {'blake2b', 'blake2s'}:
         # Prefer our blake2 implementation.
         # OpenSSL 1.1.0 comes with a limited implementation of blake2b/s.
-        # It does neither support keyed blake2 nor advanced features like
+        # It does neither support keyed blake2 nor advanced test like
         # salt, personal, tree hashing or SSE.
         return __get_builtin_constructor(name)(data, **kwargs)
     try:

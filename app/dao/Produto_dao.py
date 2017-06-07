@@ -1,7 +1,9 @@
-from app import db
-from app.models.Produto import Produto
-from sqlalchemy.orm import relationship
 from sqlalchemy import update
+from sqlalchemy.orm import relationship
+
+from app.models.Produto import Produto
+from app import db
+
 
 class Produto_dao(db.Model):
     __tablename__ = "produto"
