@@ -16,5 +16,5 @@ setup(
         'Operating System :: Ubuntu 16.0.5',
         'Framework :: Flask'
     ],
-    url='http://www.github.com/amandapersampa/FastFrango'
+    url='http://www.github.com/amandapersampa/MicroGerencia'
 )
