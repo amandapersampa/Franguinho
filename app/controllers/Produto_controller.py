@@ -1,8 +1,10 @@
-from app import app
+import json
+
+from flask import jsonify
+
 from app.dao.Produto_dao import Produto_dao
 from app.service.Produto_service import Produto_service
-from flask import jsonify
-import json
+from app import app
 
 service = Produto_service()
 

@@ -1,4 +1,4 @@
-from app.dao.Unidade_medida_dao import Unidade_medida_dao
+from app import Unidade_medida_dao
 
 
 class Unidade_medida_service(object):
