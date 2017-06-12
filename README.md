@@ -1,4 +1,4 @@
-# MicroGerencia
+﻿# MicroGerencia
 Sistema para gerenciamento do restaurante FastFrango
 
 ## Sprints do Projeto [![Managed with Taiga.io](https://img.shields.io/badge/managed%20with-TAIGA.io-709f14.svg)](https://tree.taiga.io/project/amandapersampa-amandapersampamicrogerencia/backlog/ "Managed with Taiga.io")
@@ -10,6 +10,8 @@ virtualenv venv
 
 .\venv\Scripts\activate - ativar venv
 
+###instalar o ambiente virtual:
+	$ pip install virtualenv
 ###primeiramente inicializar o ambiente virtual:
 	$ virtualenv venv
 ###ativar venv:
