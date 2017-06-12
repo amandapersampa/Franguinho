@@ -1,7 +1,7 @@
 from sqlalchemy.orm import relationship
 
-from app.models.Compra import Compra
 from app import db
+from app.main.models.Compra import Compra
 
 
 class Compra_dao(db.Model):

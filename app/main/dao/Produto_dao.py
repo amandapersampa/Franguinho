@@ -1,8 +1,8 @@
 from sqlalchemy import update
 from sqlalchemy.orm import relationship
 
-from app.models.Produto import Produto
 from app import db
+from app.main.models.Produto import Produto
 
 
 class Produto_dao(db.Model):

@@ -1,4 +1,4 @@
-from app import Produto_dao
+from app.main.dao import Produto_dao
 
 
 class Produto_service(object):

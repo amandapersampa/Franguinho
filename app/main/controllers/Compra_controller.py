@@ -1,8 +1,8 @@
+from app.main.dao.Compra_dao import Compra_dao
 from flask import jsonify
 
-from app.dao.Compra_dao import Compra_dao
-from app.service.Compra_service import Compra_service
 from app import app
+from app.main.service.Compra_service import Compra_service
 
 
 @app.route("/compra")
