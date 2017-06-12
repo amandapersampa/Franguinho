@@ -8,6 +8,8 @@ Sistema para gerenciamento do restaurante FastFrango
 ## Como Rodar:
 
 
+###instalar o ambiente virtual:
+	$ pip install virtualenv
 ###primeiramente inicializar o ambiente virtual:
 	$ virtualenv venv
 ###ativar venv:
