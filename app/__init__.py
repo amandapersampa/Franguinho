@@ -27,11 +27,11 @@ errors = {
 }
 api = flask_restful.Api(app, errors=errors)
 
-from app.dao.Produto_dao import Produto_dao
-from app.dao.Compra_dao import Compra_dao
-from app.dao.Unidade_medida_dao import Unidade_medida_dao
-from app.controllers import Produto_controller
-from app.service import Produto_service
-from app.controllers import Compra_controller
-from app.controllers import Unidade_medida_controller
-from app.service import Compra_service
+from app.main.dao.Produto_dao import Produto_dao
+from app.main.dao.Compra_dao import Compra_dao
+from app.main.dao.Unidade_medida_dao import Unidade_medida_dao
+from app.main.controllers import Produto_controller
+from app.main.service import Produto_service
+from app.main.controllers import Compra_controller
+from app.main.controllers import Unidade_medida_controller
+from app.main.service import Compra_service

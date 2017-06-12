@@ -1,8 +1,7 @@
-from flask import jsonify
-
-from app.dao.Unidade_medida_dao import Unidade_medida_dao
-from app.service.Unidade_medida_service import Unidade_medida_service
 from app import app
+from app.main.dao.Unidade_medida_dao import Unidade_medida_dao
+from flask import jsonify
+from app.main.service.Unidade_medida_service import Unidade_medida_service
 
 service = Unidade_medida_service()
 
