@@ -6,9 +6,7 @@ Sistema para gerenciamento do restaurante FastFrango
 ## Status no Travis CI [![Build Status](https://travis-ci.org/amandapersampa/MicroGerencia.svg)](https://travis-ci.org/amandapersampa/MicroGerencia)
 
 ## Como Rodar:
-virtualenv venv
 
-.\venv\Scripts\activate - ativar venv
 
 ###instalar o ambiente virtual:
 	$ pip install virtualenv
@@ -21,12 +19,16 @@ virtualenv venv
 ###adicioner novos requirements:
 	$ pip freeze > requirements.txt
 ###criar o banco no postgres:
-	
+	$ no pgadmin crie um novo banco: teste
+		[['postgresql://postgres:1234@localhost:5432/teste']]	
 ###Iniciar o projeto
 
-E necessário criar o banco no postgres antes
-	run.py db init - inicializar o banco
- 	run.py db migrate - migrar a alteração
-	run.py db upgrade - atualizar o banco
 
-run.py runserver - rodar o projeto
+####inicializar o banco
+	$ run.py db init
+####migrar a alteração
+ 	$ run.py db migrate 
+####atualizar o banco
+	$ run.py db upgrade
+###subir o servidor
+	$ run.py runserver

@@ -1,0 +1,20 @@
+import json
+
+class Item():
+    id_compra = None
+    quantidade = None
+    valor = None
+    data = None
+    produto = None
+
+    def __init__(self, id, tipo, ing_principal, qtd, serve, qtd_extra, valor):
+        self.id = id
+        self. tipo = tipo
+        self.ing_principal = ing_principal
+        self.qtd = qtd
+        self.serve = serve
+        self.qtd_extra =qtd_extra
+        self.valor = valor
+
+    def to_JSON(self):
+        return json.dumps(self, default=lambda o: o.__dict__)
