@@ -5,6 +5,8 @@ fastFrango/__pycache__/
 __pycache__/
 *.pyc
 
+migrations/
+
 \.scannerwork/
 
 \.cache/v/cache/
