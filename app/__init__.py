@@ -9,7 +9,7 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
 CORS(app)
 
-app.config.from_object('config')
+#app.config.from_object('config')
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 manager = Manager(app)
