@@ -3,10 +3,11 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_script import Manager
 from flask_migrate import Migrate, MigrateCommand
 from flask_cors import CORS, cross_origin
+from os import environ
 import flask_restful
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
+app.config['SQLALCHEMY_DATABASE_URI'] = environ['DATABASE_URL']
 CORS(app)
 
 #app.config.from_object('config')
