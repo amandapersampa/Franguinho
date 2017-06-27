@@ -1,0 +1,5 @@
+{
+    "page": "Produtos Registrados",
+    "titles": ["Código", "Produto", "Unidade", "Ações"],
+    "tabela": "Compras Cadastradas no Estoque"
+}

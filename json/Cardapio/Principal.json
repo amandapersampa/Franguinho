@@ -1,0 +1,5 @@
+{
+    "page": "Cardapio",
+    "tabela": "Itens Cadastrados no Cardápio",
+    "titles": ["Código", "Nome", "Tipo", "Ing. Principal", "Quantidade", "Unidade", "Serve à", "Item Extra", "Valor", "Ações"]
+}
