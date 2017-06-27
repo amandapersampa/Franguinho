@@ -8,6 +8,7 @@ import flask_restful
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = environ['DATABASE_URL']
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 CORS(app)
 
 #app.config.from_object('config')
