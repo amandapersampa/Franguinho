@@ -1,3 +1,5 @@
+# coding=utf-8
+
 import json
 
 from app.main.service.Produto_service import Produto_service
