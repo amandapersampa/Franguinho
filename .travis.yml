@@ -1,7 +1,10 @@
-language: java
-  
-jdk:
-  - oraclejdk8
+language: python
+
+matrix:
+  include:
+  - python: 3.6
+  - language: java
+    jdk: oraclejdk8
 
 branches:
   only:
