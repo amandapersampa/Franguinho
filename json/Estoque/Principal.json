@@ -1,0 +1,5 @@
+ {
+     "page": "Vizualizar Estoque",
+     "titles": ["Código", "Produto", "Quantidade", "Unidade", "Última Compra", "Precisa Repor?", "Ações"],
+     "tabela": "Produtos Presentes no Estoque"
+ }

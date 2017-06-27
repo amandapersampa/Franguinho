@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-sm-2">
+    </div>
+    <div class="col-sm-4">
+        <div ng-repeat="cadastro in cadastros">
+            <a href="{{cadastro.link}}" class="btn btn-default btn-block btn-primary">{{cadastro.nome}}</a><br/>
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+        <div ng-repeat="listar in listagem">
+            <a href="{{listar.link}}" class="btn btn-default btn-block btn-info">{{listar.nome}}</a><br/>
+        </div>
+    </div>
+
+    <div class="col-sm-2">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-2">
+    </div>
+    <div class="col-sm-8">
+        <a href="{{principal.link}}" class="btn btn-default btn-block btn-success">{{principal.nome}}</a> <br/>
+    </div>
+    <div class="col-sm-2">
+    </div>
+</div>

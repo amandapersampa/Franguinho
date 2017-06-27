@@ -1,0 +1,5 @@
+{
+    "page": "Despesa",
+    "tabela": "Tipos de Despesas Cadastrados",
+    "titles": ["Código", "Nome", "Tipo", "Periodicidade", "Ações"]
+}

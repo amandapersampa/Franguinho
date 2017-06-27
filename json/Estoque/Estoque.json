@@ -1,0 +1,32 @@
+{
+    "cadastros": [{
+            "link": "/#!/estoque/produto/cadastrar",
+            "nome": "Cadastrar Produtos Comuns"
+        },
+        {
+            "link": "/#!/estoque/compra/cadastrar",
+            "nome": "Cadastrar Nova Compra"
+        },
+        {
+            "link": "/#!/estoque/unidade/cadastrar",
+            "nome": "Cadastrar Nova Unidade de Medida"
+        }
+    ],
+    "listagem": [{
+            "link": "/#!/estoque/produto/listar",
+            "nome": "Visualizar Produtos Comuns Cadastrados"
+        },
+        {
+            "link": "/#!/estoque/compra/listar",
+            "nome": "Visualizar Compras Cadastradas"
+        },
+        {
+            "link": "/#!/estoque/unidade/listar",
+            "nome": "Visualizar Unidades de Medidas Cadastradas"
+        }
+    ],
+    "principal": {
+        "link": "/#!/estoque/listar",
+        "nome": "Visualizar Cardápio Completo"
+    }
+}
