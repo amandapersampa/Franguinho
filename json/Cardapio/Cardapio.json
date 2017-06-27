@@ -1,0 +1,24 @@
+{
+    "cadastros": [{
+            "link": "/#!/cardapio/itens/cadastrar",
+            "nome": "Cadastrar Itens"
+        },
+        {
+            "link": "/#!/cardapio/extra/cadastrar",
+            "nome": "Cadastrar Itens Extras"
+        }
+    ],
+    "listagem": [{
+            "link": "/#!/cardapio/itens/listar",
+            "nome": "Visualizar Itens"
+        },
+        {
+            "link": "/#!/cardapio/extra/listar",
+            "nome": "Visualizar Itens Extra"
+        }
+    ],
+    "principal": {
+        "link": "/#!/cardapio/listar",
+        "nome": "Visualizar Cardápio Completo"
+    }
+}

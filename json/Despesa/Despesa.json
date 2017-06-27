@@ -1,0 +1,19 @@
+{
+    "cadastros": [{
+            "link": "/#!/despesa/tipo/cadastrar",
+            "nome": "Cadastrar Tipo de Despesa"
+        },
+        {
+            "link": "/#!/despesa/cadastrar",
+            "nome": "Cadastrar Nova Despesa"
+        }
+    ],
+    "listagem": [{
+        "link": "/#!/despesa/tipo/listar",
+        "nome": "Visualizar Tipo de Despesa"
+    }],
+    "principal": {
+        "link": "/#!/despesa/listar",
+        "nome": "Visualizar Despesas Cadastradas"
+    }
+}

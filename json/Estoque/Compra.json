@@ -1,0 +1,5 @@
+{
+    "page": "Compras Registradas",
+    "titles": ["Código", "Produto", "Quantidade", "Unidade", "Valor", "Data da Compra", "Ações"],
+    "tabela": "Produtos Utilizados no Cardápio Cadastrados"
+}

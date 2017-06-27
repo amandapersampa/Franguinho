@@ -36,9 +36,9 @@ class Produto_dao(db.Model):
             values(nome='coca-cola')
         db.session.commit()
 
-    def to_JSON(self):
-        p = Produto(self.id_produto, self.nome, self.quantidade, self.unidade.nome, self.qtd_minima, self.item_estoque_vld)
-        return p.to_JSON()
+   # def to_JSON(self):
+    #    p = Produto(self.id_produto, self.nome, self.quantidade, self.unidade.nome, self.qtd_minima, self.item_estoque_vld)
+   #     return p.to_JSON()
 
     @staticmethod
     def listar(id):
@@ -56,5 +56,8 @@ class Produto_dao(db.Model):
     @staticmethod
     def filter_nome(nome):
         return Produto_dao.query.filter_by(nome=nome).first()
+
+    def __repr__(self):
+        return str({"id_Produto":self.id_produto, "nome":self.nome, "quantidade":self.quantidade, "unidade":self.unidade.nome})
 
 
