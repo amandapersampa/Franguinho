@@ -5,7 +5,6 @@ class Produto():
     nome = None
     quantidade = None
     unidade_medida = None
-    quantidade = None
     qtd_minima = None
     item_estoque_vld = None
 
