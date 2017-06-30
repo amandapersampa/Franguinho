@@ -1,4 +1,4 @@
-from app.main.dao import Produto_dao
+from app.main.dao.Produto_dao import Produto_dao
 
 
 class Produto_service(object):
@@ -20,11 +20,7 @@ class Produto_service(object):
 
     @staticmethod
     def findAll():
-        produtos = []
-        for produto in Produto_dao.findAll():
-            print(produto.to_JSON())
-            produtos.append(produto.to_JSON())
-        return produtos
+        return Produto_dao.findAll()
 
     @staticmethod
     def findById(id_produto):
