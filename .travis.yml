@@ -18,7 +18,7 @@ addons:
     token: 1abeb36b5e88237bb32d141cfb832530df398359
     
 script:
-    - pytest
+    - behave
     - sonar-scanner
 
 notifications:
