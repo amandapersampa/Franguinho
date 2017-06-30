@@ -7,7 +7,7 @@ i = Compra_dao(50, 20.0, "12/06/2017", 1)
 
 @given('eu quero cadastrar uma compra')
 def step_impl(context):
-    mensagem = Compra_service.salvar(i)
+    mensagem = Compra_service.salvar(context, i)
 
 @when('compra ainda nao foi cadastrada')
 def step_impl(context):
