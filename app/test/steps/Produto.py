@@ -3,10 +3,10 @@ from app.main.service.Produto_service import Produto_service
 from app.main.dao.Produto_dao import Produto_dao
 
 mensagem = ""
+i = Produto_dao("batata", 1, 4, 2, "sim")
 
 @given('eu quero cadastrar o produto')
 def step_impl(context):
-    i = Produto_dao("batata", 1, 4, 2, "sim")
     mensagem = Produto_service.salvar(i)
 
 @when('produto ainda nao foi cadastrado')
@@ -27,7 +27,7 @@ def step_impl(context):
 
 @when('eu deixo o nome em branco')
 def step_impl(context):
-    assert True is not False
+    assert not i.nome
 
 @then('mensagem de erro ao cadastrar produto')
 def step_impl(context):
