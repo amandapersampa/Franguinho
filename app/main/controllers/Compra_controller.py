@@ -1,3 +1,5 @@
+# coding=utf-8
+
 from app.main.models.Compra import Compra_dao
 from flask import jsonify
 from flask import render_template
