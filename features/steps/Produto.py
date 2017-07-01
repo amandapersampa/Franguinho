@@ -1,7 +1,7 @@
 from behave import *
+
+from app.main.models.Produto import Produto_dao
 from app.main.service.Produto_service import Produto_service
-from app.main.dao.Produto_dao import Produto_dao
-from app.main.models.Produto import Produto
 
 mensagem = ""
 i = Produto_dao("batata", 1, 4, 2, "sim")

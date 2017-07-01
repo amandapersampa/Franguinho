@@ -1,6 +1,7 @@
 from behave import *
+
+from app.main.models.Compra import Compra_dao
 from app.main.service.Compra_service import Compra_service
-from app.main.dao.Compra_dao import Compra_dao
 
 mensagem = ""
 i = Compra_dao(50, 20.0, "12/06/2017", 1)

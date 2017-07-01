@@ -1,5 +1,5 @@
 from app import db
-from app.main.models.Compra import Compra
+from app.main.models.Compra import Compra_dao
 
 
 class Cardapio_dao(db.Model):
@@ -12,12 +12,6 @@ class Cardapio_dao(db.Model):
     def __init__(self, nome, valor):
         self.nome = nome
         self.valor = valor
-
-
-    def to_JSON(self):
-        p = Compra(self.id_compra, self.quantidade, self.valor, self.produto.nome)
-        print(p.id_compra, self.produto.nome)
-        return p.to_JSON()
 
     def salvar(self):
         db.session.add(self)
