@@ -2,14 +2,11 @@ from sqlalchemy import update
 from sqlalchemy.orm import relationship
 
 from app import db
-from app.main.models.Produto import Produto
-
 
 class Produto_dao(db.Model):
     __tablename__ = "produto"
     id_produto = db.Column(db.Integer, primary_key=True)
     nome = db.Column(db.String, unique=True)
-    # unidade_medida = db.Column(db.String)
     quantidade= db.Column(db.Integer)
     qtd_minima = db.Column(db.Integer)
     item_estoque_vld = db.Column(db.String)
@@ -36,9 +33,6 @@ class Produto_dao(db.Model):
             values(nome='coca-cola')
         db.session.commit()
 
-   # def to_JSON(self):
-    #    p = Produto(self.id_produto, self.nome, self.quantidade, self.unidade.nome, self.qtd_minima, self.item_estoque_vld)
-   #     return p.to_JSON()
 
     @staticmethod
     def listar(id):
@@ -58,6 +52,6 @@ class Produto_dao(db.Model):
         return Produto_dao.query.filter_by(nome=nome).first()
 
     def __repr__(self):
-        return str({"id_Produto": self.id_produto, "quantidade": self.quantidade, "unidade": self.unidade.nome})
+        return str({"id_Produto": self.id_produto, "nome": self.nome, "quantidade": self.quantidade, "unidade": self.unidade.nome})
 
 

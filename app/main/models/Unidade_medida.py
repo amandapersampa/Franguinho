@@ -1,7 +1,6 @@
 from sqlalchemy.orm import relationship
 
 from app import db
-from app.main.models.Unidade_medida import Unidade_medida
 
 
 class Unidade_medida_dao(db.Model):
@@ -11,7 +10,6 @@ class Unidade_medida_dao(db.Model):
     produto = relationship("Produto_dao", back_populates="unidade", uselist=False)
 
 
-
     def __init__(self, nome):
         self.nome = nome
 
@@ -19,10 +17,6 @@ class Unidade_medida_dao(db.Model):
         print(self.nome)
         db.session.add(self)
         db.session.commit()
-
-    #def to_JSON(self):
-    #    unidade= Unidade_medida(self.nome)
-    #   return unidade.to_JSON()
 
     @staticmethod
     def listar(id):

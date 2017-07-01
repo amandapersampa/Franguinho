@@ -1,7 +1,6 @@
 from sqlalchemy.orm import relationship
 
 from app import db
-from app.main.models.Compra import Compra
 
 
 class Compra_dao(db.Model):
@@ -19,10 +18,6 @@ class Compra_dao(db.Model):
         self.data = data
         self.id_produto = id_produto
 
-    def to_JSON(self):
-        p = Compra(self.id_compra, self.quantidade, self.valor, self.produto.nome)
-        print(p.id_compra, self.produto.nome)
-        return p.to_JSON()
 
     def salvar(self):
         db.session.add(self)
@@ -34,3 +29,6 @@ class Compra_dao(db.Model):
     @staticmethod
     def findAll():
         return Compra_dao.query.all()
+
+    def __repr__(self):
+        return str({"id_compra": self.id_compra, "quantidade": self.quantidade, "valor": self.valor,"produto": self.produto})
