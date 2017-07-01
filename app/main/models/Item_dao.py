@@ -1,7 +1,7 @@
 from sqlalchemy.orm import relationship
 
 from app import db
-from app.main.models.Compra import Compra
+from app.main.models.Compra import Compra_dao
 
 
 class Compra_dao(db.Model):
@@ -20,7 +20,7 @@ class Compra_dao(db.Model):
         self.id_produto = id_produto
 
     def to_JSON(self):
-        p = Compra(self.id_compra, self.quantidade, self.valor, self.produto.nome)
+        p = Compra_dao(self.id_compra, self.quantidade, self.valor, self.produto.nome)
         print(p.id_compra, self.produto.nome)
         return p.to_JSON()
 

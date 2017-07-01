@@ -1,16 +1,13 @@
 # coding=utf-8
 
-import json
-
-from app.main.service.Produto_service import Produto_service
-from app.main.service.Unidade_medida_service import Unidade_medida_service
-from flask import render_template
 from flask import jsonify
-
+from flask import render_template
 
 from app import app
-from app.main.dao.Produto_dao import Produto_dao
-from app.main.models.Produto_forms import Produto_forms
+from app.main.forms.Produto_forms import Produto_forms
+from app.main.models.Produto import Produto_dao
+from app.main.service.Produto_service import Produto_service
+from app.main.service.Unidade_medida_service import Unidade_medida_service
 
 service = Produto_service()
 
@@ -24,14 +21,11 @@ def teste():
 def lista_todos():
     service.findAll()
     nome={
-    "page": "Compras Registradas",
-    "titles": ["Código", "Produto", "Quantidade", "Unidade", "Valor", "Data da Compra", "Ações"],
-    "tabela": "Produtos Utilizados no Cardápio Cadastrados"}
+    "titles": ["Código", "Produto", "Quantidade", "Unidade", "Valor", "Data da Compra", "Ações"]
+  }
     resultado = service.findAll()
-    print("testee",resultado)
-   # print("qqqqqqqq",resultado[0][0]["id_produto"])
     return render_template("Listar.html", nome=nome, produtos=resultado)
-   # return jsonify(service.findAll())
+
 
 @app.route("/produto/<id>")
 def findById_produto(id):
