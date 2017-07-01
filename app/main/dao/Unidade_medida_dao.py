@@ -20,9 +20,9 @@ class Unidade_medida_dao(db.Model):
         db.session.add(self)
         db.session.commit()
 
-    def to_JSON(self):
-        unidade= Unidade_medida(self.nome)
-        return unidade.to_JSON()
+    #def to_JSON(self):
+    #    unidade= Unidade_medida(self.nome)
+    #   return unidade.to_JSON()
 
     @staticmethod
     def listar(id):
@@ -40,6 +40,9 @@ class Unidade_medida_dao(db.Model):
     @staticmethod
     def filter_nome(nome):
         return Unidade_medida_dao.query.filter_by(nome=nome).first()
+
+    def __repr__(self):
+        return str({"id_unidade_medida": self.id_unidade_medida, "nome": self.nome})
 
 
 

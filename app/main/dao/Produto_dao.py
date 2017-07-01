@@ -58,6 +58,6 @@ class Produto_dao(db.Model):
         return Produto_dao.query.filter_by(nome=nome).first()
 
     def __repr__(self):
-        return str({"id_Produto":self.id_produto, "nome":self.nome, "quantidade":self.quantidade, "unidade":self.unidade.nome})
+        return str({"id_Produto": self.id_produto, "quantidade": self.quantidade, "unidade": self.unidade.nome})
 
 
