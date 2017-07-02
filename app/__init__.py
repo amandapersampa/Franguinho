@@ -5,6 +5,7 @@ from flask_migrate import Migrate, MigrateCommand
 from flask_script import Manager
 from flask_sqlalchemy import SQLAlchemy
 from os import environ
+from flask import render_template
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = environ['DATABASE_URL']
@@ -36,3 +37,7 @@ from app.main.service import Produto_service
 from app.main.controllers import Compra_controller
 from app.main.controllers import Unidade_medida_controller
 from app.main.service import Compra_service
+
+@app.route("/", methods=["GET"])
+def hello():
+    return render_template('index.html')
