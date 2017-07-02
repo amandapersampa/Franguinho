@@ -1,4 +1,5 @@
-from app.main.dao.Produto_dao import Produto_dao
+# coding=utf-8
+from app.main.models.Produto import Produto_dao
 
 
 class Produto_service(object):

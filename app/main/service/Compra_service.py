@@ -1,4 +1,5 @@
-from app import Compra_dao
+# coding=utf-8
+from app.main.models.Compra import Compra_dao
 from app import Produto_dao
 
 
@@ -17,10 +18,5 @@ class Compra_service(object):
 
     @staticmethod
     def findAll():
-        compras = []
-        print('findAll', Compra_dao.findAll())
-        for compra in Compra_dao.findAll():
-            print(compra.to_JSON())
-            compras.append(compra.to_JSON())
-        return compras
+        return Compra_dao.findAll()
 

@@ -1,4 +1,5 @@
-from app import Unidade_medida_dao
+# coding=utf-8
+from app.main.models.Unidade_medida import Unidade_medida_dao
 
 
 class Unidade_medida_service(object):
@@ -19,11 +20,6 @@ class Unidade_medida_service(object):
 
     @staticmethod
     def findAll():
-        #unidade_medidas = {}
-       # for unidade_medida in Unidade_medida_dao.findAll():
-        #    print(unidade_medida.to_JSON())
-        #    unidade_medidas[unidade_medida.id_unidade_medida] = unidade_medida.to_JSON()
-        #print(unidade_medidas)
         return Unidade_medida_dao.findAll()
 
     @staticmethod
