@@ -1,5 +1,4 @@
 # coding=utf-8
-import flask_restful
 from flask import Flask
 from flask_cors import CORS
 from flask_migrate import Migrate, MigrateCommand
@@ -30,7 +29,6 @@ errors = {
         'extra': "Any extra information you want.",
     },
 }
-api = flask_restful.Api(app, errors=errors)
 
 from app.main.models.Produto import Produto_dao
 from app.main.controllers import Produto_controller
