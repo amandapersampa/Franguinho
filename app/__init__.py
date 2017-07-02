@@ -47,6 +47,7 @@ if os.environ.get('HEROKU') is not None:
     app.logger.addHandler(stream_handler)
     app.logger.setLevel(logging.INFO)
     app.logger.info('microgerencia startup')
+    db.create_all()
 
 from app.main.models.Produto import Produto_dao
 from app.main.models.Item_cardapio import Item_cardapio_dao

@@ -1,3 +1,4 @@
+# coding=utf-8
 from behave import *
 
 from app.main.models.Item_cardapio import Item_cardapio_dao

@@ -1,3 +1,4 @@
+# coding=utf-8
 from behave import *
 
 from app.main.service.Produto_service import Produto_service
