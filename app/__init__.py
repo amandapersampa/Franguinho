@@ -9,14 +9,16 @@ import os
 from flask import render_template
 
 app = Flask(__name__)
+#app.config['SQLALCHEMY_DATABASE_URI'] = environ['DATABASE_URL']
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+
 CORS(app)
 
 app.config.from_object('config')
-
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 manager = Manager(app)
-#app.run(debug=False, host='0.0.0.0')
+#app.run(debug=True, host='0.0.0.0')
 
 manager.add_command('db', MigrateCommand)
 errors = {
@@ -58,6 +60,6 @@ from app.main.controllers import Unidade_medida_controller
 from app.main.controllers import Item_cardapio_controller
 from app.main.service import Compra_service
 
-@app.route("/", methods=["GET"])
-def hello():
-    return render_template('inicio.html')
+#@app.route("/", methods=["GET"])
+#def hello():
+#    return render_template('inicio.html')

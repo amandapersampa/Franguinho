@@ -7,9 +7,9 @@ class Item_cardapio_forms(FlaskForm):
     nome = StringField("nome", validators=[DataRequired()])
     produto = SelectField('produto')
     qtd_ingrediente = IntegerField("qtd_ingrediente", validators=[DataRequired()])
+    item_extra = SelectField('item_extra', choices=[('N', 'Não'),('S', 'Sim'),])
     valor = FloatField("valor", validators=[DataRequired()])
     qtd_item_extra= IntegerField("qtd_item_extra", validators=[DataRequired()])
     tipo_item = SelectField('tipo_item' , choices=[('acai', 'Açaí'), ('bebida', 'Bebida'), ('porcao', 'Porção'),('lanche', 'Lanche')])
-
 
 
