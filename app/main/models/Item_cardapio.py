@@ -12,6 +12,7 @@ class Item_cardapio_dao(db.Model):
     qtd_ingrediente = db.Column(db.Integer)
     qtd_item_extra = db.Column(db.Integer)
     tipo_item = db.Column(db.String)
+    item_extra = db.Column(db.String)
 
     id_produto = db.Column(db.Integer, db.ForeignKey('produto.id_produto'))
     produto = relationship("Produto_dao", back_populates="")
@@ -42,4 +43,4 @@ class Item_cardapio_dao(db.Model):
 
     def __repr__(self):
         return str({"id_produto": self.id_produto, "nome": self.nome, "qtd_ingrediente": self.qtd_ingrediente,
-                    "produto": self.produto.nome,"valor":self.valor,"tipo_item" : self.tipo_item,"self.qtd_item_extra":self.qtd_item_extra})
+                    "produto": self.produto,"valor":self.valor,"tipo_item" : self.tipo_item,"self.qtd_item_extra":self.qtd_item_extra})
