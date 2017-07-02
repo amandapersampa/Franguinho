@@ -1,20 +1,23 @@
 # coding=utf-8
-import flask_restful
 from flask import Flask
 from flask_cors import CORS
 from flask_migrate import Migrate, MigrateCommand
 from flask_script import Manager
 from flask_sqlalchemy import SQLAlchemy
+from os import environ
+from flask import render_template
 
 app = Flask(__name__)
-#app.config['SQLALCHEMY_DATABASE_URI'] = environ['DATABASE_URL']
+app.config['SQLALCHEMY_DATABASE_URI'] = environ['DATABASE_URL']
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+
 CORS(app)
 
-app.config.from_object('config')
+#app.config.from_object('config')
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 manager = Manager(app)
+app.run(debug=True, host='0.0.0.0')
 
 manager.add_command('db', MigrateCommand)
 errors = {
@@ -28,7 +31,6 @@ errors = {
         'extra': "Any extra information you want.",
     },
 }
-api = flask_restful.Api(app, errors=errors)
 
 from app.main.models.Produto import Produto_dao
 from app.main.models.Item_cardapio import Item_cardapio_dao
@@ -38,3 +40,7 @@ from app.main.controllers import Compra_controller
 from app.main.controllers import Unidade_medida_controller
 from app.main.controllers import Item_cardapio_controller
 from app.main.service import Compra_service
+
+@app.route("/", methods=["GET"])
+def hello():
+    return render_template('inicio.html')
