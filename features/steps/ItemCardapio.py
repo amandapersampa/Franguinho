@@ -22,7 +22,7 @@ def step_impl(context):
     assert True
     #assert context.failed is False
 
-@when('eu deixo o nome em branco')
+@when('eu deixo o nome do item em branco')
 def step_impl(context):
     assert True
     #assert not i.nome
