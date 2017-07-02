@@ -12,6 +12,7 @@ class Item_cardapio_dao(db.Model):
     qtd_ingrediente = db.Column(db.Integer)
     qtd_item_extra = db.Column(db.Integer)
     tipo_item = db.Column(db.String)
+    item_extra = db.Column(db.String)
 
     id_produto = db.Column(db.Integer, db.ForeignKey('produto.id_produto'))
     produto = relationship("Produto_dao", back_populates="")
