@@ -1,24 +1,15 @@
 from behave import *
 
-from app.main.models.Produto import Produto_dao
 from app.main.service.Produto_service import Produto_service
-<<<<<<< HEAD
-from app.main.dao.Produto_dao import Produto_dao
-=======
->>>>>>> master
+from app.main.models.Produto import Produto_dao
 
 mensagem = ""
-#i = Produto_dao("batata", 1, 4, 2, "sim")
+i = Produto_dao("batata", 1, 4, 2, "sim")
 
 @given('eu quero cadastrar o produto')
 def step_impl(context):
-<<<<<<< HEAD
     ps = Produto_service()
     mensagem = Produto_service.salvar(ps, i)
-=======
-    i = Produto_dao("batata", 1, 4, 2, "sim")
-    #mensagem = Produto_service.salvar(context, i)
->>>>>>> master
 
 @when('produto ainda nao foi cadastrado')
 def step_impl(context):

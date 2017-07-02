@@ -4,17 +4,12 @@ from app.main.models.Compra import Compra_dao
 from app.main.service.Compra_service import Compra_service
 
 mensagem = ""
-#i = Compra_dao(50, 20.0, "12/06/2017", 1)
+i = Compra_dao(50, 20.0, "12/06/2017", 1)
 
 @given('eu quero cadastrar uma compra')
 def step_impl(context):
-<<<<<<< HEAD
     cs = Compra_service()
     mensagem = Compra_service.salvar(cs, i)
-=======
-    i = Compra_dao(50, 20.0, "12/06/2017", 1)
-    #mensagem = Compra_service.salvar(context, i)
->>>>>>> master
 
 @when('compra ainda nao foi cadastrada')
 def step_impl(context):

@@ -8,8 +8,8 @@ i = Item_cardapio_dao("porção de frango", 25.0, 1, 15, 0, "porção")
 
 @given('eu quero cadastrar um item')
 def step_impl(context):
-    is = Item_cardapio_service()
-    mensagem = Item_cardapio_service.salvar(is, i)
+    its = Item_cardapio_service()
+    mensagem = Item_cardapio_service.salvar(its, i)
 
 @when('item ainda nao foi cadastrado')
 def step_impl(context):
