@@ -1,0 +1,88 @@
+{% extends "masterpage.html" %}
+
+  {% block title %}Home{% endblock %}
+
+  {% block nav %}{% endblock %}
+
+  {% block content %}
+
+  <section class="row">
+
+	<div class="container col-md-12 col-md-offset-4 imagembotton">
+		<img src="{{url_for('static',filename='imagens/HOME.png')}}">
+	</div>
+
+
+  	<div class="row topnois text-center">
+
+  	<!--http://fontawesome.io/icons/-->
+
+  		<a href="#">
+	  	<div class="topicone col-md-2 col-sm-2 col-xs-12 col-md-offset-3 col-sm-offset-3">
+	  		<div id="1">
+	  			<i class="text-menu fa fa-shopping-cart fa-5x" aria-hidden="true"></i>
+	  		</div>
+	  		<div class="text-menu text-center">
+	  			<label for="1" class="label-top">Criar Pedido</label>				
+	  		</div>
+	     	
+	  	</div>
+	  	</a>
+
+	  	<a href="#">
+	  	<div class="topicone col-md-2 col-sm-2 col-xs-12 col-sm-3">
+	  		<div id="2">
+	  			<i class="text-menu fa fa-stack-overflow fa-5x" aria-hidden="true"></i>
+	  		</div>
+	  		<div class="text-menu text-center">
+	  			<label for="2" class="label-top">Gerência de Estoque</label>				
+	  		</div>
+        		
+	  	</div>
+	  	</a>  	
+
+	  	<a href="#">
+	  	<div class="topicone col-md-2 col-sm-2 col-xs-12 col-sm-3">
+	  		<div id="3">
+	  			<i class="text-menu fa fa-list-alt fa-5x" aria-hidden="true"></i>
+	  		</div>
+	  		<div class="text-menu text-center">
+	  			<label for="3" class="label-top">Gerência de Cardápio</label>				
+	  		</div>
+        	   		
+	  	</div>
+	  	</a>
+
+
+		<a href="#">
+	  	<div class="topicone col-md-2 col-sm-2 col-xs-12 col-md-offset-4 col-sm-offset-4">
+	  		<div id="4">
+	  			<i class="text-menu fa fa-calculator fa-5x" aria-hidden="true"></i>
+	  		</div>
+	  		<div class="text-menu text-center">
+	  			<label for="4" class="label-top">Gerência de Dispesas</label>				
+	  		</div>
+        	 	  		
+	  	</div>
+	  	</a> 
+
+	  	<a href="#">
+	  	<div class="topicone col-md-2 col-sm-2 col-xs-12">
+	  		<div id="5">
+	  			<i class="text-menu fa fa-bar-chart fa-5x" aria-hidden="true"></i>
+	  		</div>
+	  		<div class="text-menu text-center">
+	  			<label for="5" class="label-top">Relatório</label>				
+	  		</div>
+        	   		
+	  	</div>
+	  	</a> 
+
+	</div>
+  	
+
+  </section>
+
+
+
+  {% endblock %}

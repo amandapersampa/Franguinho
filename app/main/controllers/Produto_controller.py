@@ -11,11 +11,9 @@ from app.main.service.Unidade_medida_service import Unidade_medida_service
 
 service = Produto_service()
 
-@app.route("/produto")
+@app.route("/")
 def teste():
-    i=Produto_dao("batata", 1, 4, 2, "sim")
-    #self, nome, unidade_medida, quantidade, qtd_minima, item_estoque_vld
-    return jsonify(service.salvar(i))
+    return render_template("home.html")
 
 @app.route("/produto/list")
 def lista_todos():
