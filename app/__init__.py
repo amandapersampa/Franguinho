@@ -7,11 +7,12 @@ from flask_script import Manager
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-#app.config['SQLALCHEMY_DATABASE_URI'] = environ['DATABASE_URL']
+app.config['SQLALCHEMY_DATABASE_URI'] = environ['DATABASE_URL']
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+
 CORS(app)
 
-app.config.from_object('config')
+#app.config.from_object('config')
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 manager = Manager(app)
