@@ -13,13 +13,10 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
 CORS(app)
-
 app.config.from_object('config')
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 manager = Manager(app)
-#app.run(debug=True, host='0.0.0.0')
-
 manager.add_command('db', MigrateCommand)
 errors = {
     'sqlalchemy.exc.IntegrityError': {
@@ -33,7 +30,7 @@ errors = {
     },
 }
 
-if not app.debug and environ.get('HEROKU') is None:
+if environ.get('HEROKU') is None:
     import logging
     from logging.handlers import RotatingFileHandler
     file_handler = RotatingFileHandler('tmp/microblog.log', 'a', 1 * 1024 * 1024, 10)
@@ -59,7 +56,3 @@ from app.main.controllers import Compra_controller
 from app.main.controllers import Unidade_medida_controller
 from app.main.controllers import Item_cardapio_controller
 from app.main.service import Compra_service
-
-#@app.route("/", methods=["GET"])
-#def hello():
-#    return render_template('inicio.html')
