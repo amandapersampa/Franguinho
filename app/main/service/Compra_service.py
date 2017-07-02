@@ -1,3 +1,4 @@
+# coding=utf-8
 from app.main.models.Compra import Compra_dao
 from app import Produto_dao
 

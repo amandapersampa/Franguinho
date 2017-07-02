@@ -1,3 +1,4 @@
+# coding=utf-8
 from app.main.models.Unidade_medida import Unidade_medida_dao
 
 

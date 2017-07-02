@@ -1,3 +1,4 @@
+# coding=utf-8
 from app.main.models.Produto import Produto_dao
 
 

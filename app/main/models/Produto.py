@@ -1,3 +1,4 @@
+# coding=utf-8
 from sqlalchemy import update
 from sqlalchemy.orm import relationship
 
