@@ -25,11 +25,13 @@
                             <tbody>
                               {% for item in resultado %}
                                 <tr>
-                                    <td ng-if="item.col1">{{item["id_compra"]}}</td>
-                                    <td ng-if="item.col2">{{item["produto"].nome}}</td>
-                                    <td ng-if="item.col3">{{item["quantidade"]}}</td>
-                                    <td ng-if="item.col4">{{item["valor"]}}</td>
-                                    <td ng-if="item.col5">{{item["data"]}}</td>
+                                    <td ng-if="item.col1">{{item["id_item_cardapio"]}}</td>
+                                    <td ng-if="item.col2">{{item["nome"]}}</td>
+                                    <td ng-if="item.col3">{{item["produto"].nome}}</td>
+                                    <td ng-if="item.col4">{{item["qtd_ingrediente"]}}</td>
+                                    <td ng-if="item.col5">{{item["qtd_item_extra"]}}</td>
+                                    <td ng-if="item.col6">{{item["valor"]}}</td>
+                                    <td ng-if="item.col7">{{item["tipo_item"]}}</td>
 
 
                                         <button ng-click="remove()"> <span class="glyphicon glyphicon-trash"></span>

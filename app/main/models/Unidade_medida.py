@@ -1,5 +1,4 @@
 from sqlalchemy.orm import relationship
-
 from app import db
 
 
@@ -8,7 +7,6 @@ class Unidade_medida_dao(db.Model):
     id_unidade_medida = db.Column(db.Integer, primary_key=True)
     nome = db.Column(db.String, unique=True)
     produto = relationship("Produto_dao", back_populates="unidade", uselist=False)
-
 
     def __init__(self, nome):
         self.nome = nome

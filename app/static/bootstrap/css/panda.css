@@ -1,0 +1,56 @@
+.tituloPagina{
+  margin-top: 80px;
+  margin-bottom: 40px;
+}
+
+.imagembotton{
+  margin-bottom: 20px;
+}
+.text-menu{
+    color: #23485B;
+}
+
+.text-menu:hover{
+    color: #AC2641;
+    text-decoration-line: none;
+}
+.topicone{
+  margin-top: 45px;
+}
+
+.topnois{
+  margin-top: 50px;
+}
+
+#rodape{
+  vertical-align: middle;
+  position: fixed;
+  bottom: 0;
+  background-color: rgba(0,0,0,.6);
+  /*border: 1px solid pink;*/
+}
+
+.divisor{
+  width: 100%;
+  height: 1px;
+  background: rgba(0,0,0,.6);
+  margin:5px 10px;
+  position: relative;
+}
+
+.text-rodape{
+    margin-left: 5px;
+    color: #23485B;
+    /*border: 1px solid green;*/
+    text-align: center;
+}
+
+.text-rodape:hover{
+    margin-left: 5px;
+    color: rgba(0,0,0,.6);
+    text-decoration-line: none;
+}
+
+.text-rodape li{
+  list-style-type:none;
+}

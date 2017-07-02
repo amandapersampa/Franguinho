@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		{% block head %}
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	    <title>{% block title %}{% endblock %} -MicroGerApp</title>
+	    <link rel="icon" href="{{ url_for('static',filename='imagens/logo.png')}}" >
+
+	    <script type="text/javascript">
+
+		</script>
+
+	    <!-- Bootstrap -->
+	    <link href="{{ url_for('static',filename='bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+        <link href="{{ url_for('static',filename='bootstrap/css/panda.css')}}" rel="stylesheet">
+        <link href="{{ url_for('static',filename='font-awesome-4.7.0/css/font-awesome.min.css')}}" rel="stylesheet">
+
+	    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	    <!--[if lt IE 9]>
+	      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+	    {% endblock %}
+	</head>
+
+
+
+	<body>
+
+		{% block nav %}
+
+		<!-- Navigation -->
+		<nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+			<div class="container">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+					</button>
+					<img class="navbar-brand" id="imagemnavegador" src="{{url_for('static',filename='imagens/inicial.png')}}">
+					<a class="navbar-brand" href="#"> MicroGerApp </a>
+				</div>
+
+
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-left">
+						<li class="hidden">
+							<a href="#page-top"></a>
+						</li>
+						<li class="page-scroll">
+							<a href="#">Pedido</a>
+						</li>
+						<li class="page-scroll">
+							<a href="#">Produto</a>
+						</li>
+						<li class="page-scroll">
+							<a href="#">Compra</a>
+						</li>
+						<li class="page-scroll">
+							<a href="#">Cardápio</a>
+						</li>
+						<li class="page-scroll">
+							<a href="#">Relatório</a>
+						</li>
+						<li class="page-scroll">
+							<a href="#">Estoque</a>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1
+							<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+							  <li><a href="#">Page 1-1</a></li>
+							  <li><a href="#">Page 1-2</a></li>
+							  <li><a href="#">Page 1-3</a></li>
+							</ul>
+						</li>
+						<li class="page-scroll">
+							<a href="#"><span class="glyphicon glyphicon-log-in"></span> Sair </a>
+						</li>
+
+
+					</ul>
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+			<!-- /.container-fluid -->
+		</nav>
+
+		{% endblock %}
+
+		{% block content %}
+		<section class="container">
+
+			
+
+			
+
+
+		</section>
+		{% endblock %}
+
+
+		{% block footer %}
+		<footer id="rodape center-block ">
+
+			<div class="row center-block footer navbar-bottom">
+				<div class="text-rodape col-md-11 col-sm-11 col-xs-10">
+					<ul><li class="divisor"></li></ul>
+					<img src="{{url_for('static',filename='imagens/logo.png')}}">
+					<a href="#" target="_blank" class="text-rodape "> MicroGerApp </a>
+				</div>
+			</div>
+
+		</footer>
+
+
+		<!-- jQuery -->
+
+		<script src="{{url_for('static',filename='jquery/jquery.min.js')}}"></script>
+		<script src="{{url_for('static',filename='jquery/jquery.js')}}" type="text/javascript"></script>
+		<script src="{{url_for('static',filename='jquery/jqueryview.js')}}" type="text/javascript"></script>
+
+
+		<!-- Bootstrap Core JavaScript -->
+
+		<script src="{{url_for('static',filename='bootstrap/js/bootstrap.min.js')}}"></script>
+		{% endblock %}
+	</body>
+</html>
+

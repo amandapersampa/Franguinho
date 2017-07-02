@@ -48,10 +48,12 @@ if os.environ.get('HEROKU') is not None:
     app.logger.info('microgerencia startup')
 
 from app.main.models.Produto import Produto_dao
+from app.main.models.Item_cardapio import Item_cardapio_dao
 from app.main.controllers import Produto_controller
 from app.main.service import Produto_service
 from app.main.controllers import Compra_controller
 from app.main.controllers import Unidade_medida_controller
+from app.main.controllers import Item_cardapio_controller
 from app.main.service import Compra_service
 
 @app.route("/", methods=["GET"])
