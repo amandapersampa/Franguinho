@@ -9,7 +9,8 @@ i = Produto_dao("batata", 1, 4, 2, "sim")
 
 @given('eu quero cadastrar o produto')
 def step_impl(context):
-    ps = Produto_service()
+    ps = True
+    #ps = Produto_service()
     #mensagem = Produto_service.salvar(ps, i)
 
 @when('produto ainda nao foi cadastrado')
