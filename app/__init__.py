@@ -5,6 +5,7 @@ from flask_migrate import Migrate, MigrateCommand
 from flask_script import Manager
 from flask_sqlalchemy import SQLAlchemy
 from os import environ
+import os
 from flask import render_template
 
 app = Flask(__name__)
