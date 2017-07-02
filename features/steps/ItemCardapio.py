@@ -7,7 +7,7 @@ from app.main.service.Item_cardapio_service import Item_cardapio_service
 mensagem = ""
 i = Item_cardapio_dao("porção de frango", 25.0, 1, 15, 0, "porção")
 
-@given('eu quero cadastrar um item')
+@given('eu quero cadastrar um item do cardapio')
 def step_impl(context):
     ps = True
     #its = Item_cardapio_service()
@@ -23,7 +23,7 @@ def step_impl(context):
     assert True
     #assert context.failed is False
 
-@when('eu deixo o nome do item em branco')
+@when('eu deixo o nome do item do cardapio em branco')
 def step_impl(context):
     assert True
     #assert not i.nome
