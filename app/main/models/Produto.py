@@ -15,6 +15,8 @@ class Produto_dao(db.Model):
     id_unidade_medida = db.Column(db.Integer, db.ForeignKey('unidademedida.id_unidade_medida'))
     unidade = relationship("Unidade_medida_dao", back_populates="produto")
 
+    ingrediente = relationship("Item_cardapio_dao", back_populates="produto", uselist=False)
+
     def __init__(self, nome, unidade_medida, quantidade, qtd_minima, item_estoque_vld):
         self.nome = nome
         self.id_unidade_medida = unidade_medida

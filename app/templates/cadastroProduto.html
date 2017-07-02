@@ -15,7 +15,12 @@
   </div>
  <div class="form-group">
     <label>Quantidade mínima</label>
-    {{ form.quantidade_minima(class="form-control", type="number") }}
+    {{ form.quantidade_minima(class="form-control", type="number" , min="0") }}
+  </div>
+
+  <div class="form-group">
+    <label>Item pertence ao cardapio:</label>
+    {{ form.item_cardapio(class="form-control") }}
   </div>
 
   <button type="submit" class="btn btn-default">Cadastrar</button>

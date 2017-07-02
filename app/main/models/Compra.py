@@ -8,7 +8,7 @@ class Compra_dao(db.Model):
     id_compra = db.Column(db.Integer, primary_key=True)
     quantidade = db.Column(db.Integer)
     valor = db.Column(db.Float)
-    data = db.Column(db.String)
+    data = db.Column(db.Date)
     id_produto = db.Column(db.Integer, db.ForeignKey('produto.id_produto'))
     produto = relationship("Produto_dao", back_populates="compra")
 

@@ -31,7 +31,8 @@ def cadastro_compra():
     if form.is_submitted():
         service = Compra_service()
         # def __init__(self, quantidade, valor, data, id_produto):
-        compra = Compra_dao(form.quantidade.data, form.valor.data, '23/11/2017', form.produto.data)
+        print(form.data.data)
+        compra = Compra_dao(form.quantidade.data, form.valor.data, form.data.data, form.produto.data)
         service.salvar(compra)
 
     return render_template('cadastro_compra.html', form=form)
