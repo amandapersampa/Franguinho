@@ -8,16 +8,14 @@ from os import environ
 from flask import render_template
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = environ['DATABASE_URL']
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
-
 CORS(app)
 
-#app.config.from_object('config')
+app.config.from_object('config')
+
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 manager = Manager(app)
-app.run(debug=True, host='0.0.0.0')
+#app.run(debug=False, host='0.0.0.0')
 
 manager.add_command('db', MigrateCommand)
 errors = {
@@ -31,6 +29,23 @@ errors = {
         'extra': "Any extra information you want.",
     },
 }
+
+if not app.debug and environ.get('HEROKU') is None:
+    import logging
+    from logging.handlers import RotatingFileHandler
+    file_handler = RotatingFileHandler('tmp/microblog.log', 'a', 1 * 1024 * 1024, 10)
+    file_handler.setLevel(logging.INFO)
+    file_handler.setFormatter(logging.Formatter('%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]'))
+    app.logger.addHandler(file_handler)
+    app.logger.setLevel(logging.INFO)
+    app.logger.info('microblog startup')
+
+if os.environ.get('HEROKU') is not None:
+    import logging
+    stream_handler = logging.StreamHandler()
+    app.logger.addHandler(stream_handler)
+    app.logger.setLevel(logging.INFO)
+    app.logger.info('microgerencia startup')
 
 from app.main.models.Produto import Produto_dao
 from app.main.controllers import Produto_controller
