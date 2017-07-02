@@ -17,6 +17,7 @@ CORS(app)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 manager = Manager(app)
+app.run(debug=True, host='0.0.0.0')
 
 manager.add_command('db', MigrateCommand)
 errors = {
