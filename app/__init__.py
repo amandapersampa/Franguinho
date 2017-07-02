@@ -40,4 +40,4 @@ from app.main.service import Compra_service
 
 @app.route("/", methods=["GET"])
 def hello():
-    return render_template('index.html')
+    return render_template('inicio.html')
