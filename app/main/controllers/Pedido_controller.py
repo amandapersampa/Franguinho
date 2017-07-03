@@ -14,7 +14,7 @@ from app import app
 def cadastro_pedido():
     form = Pedido_forms()
     formModal = modal_item_cardapio()
-    formModal.item_cardapio.choices = [(row.nome) for row in Item_cardapio_dao.findAll()]
+    formModal.item_cardapio.choices = [(row.id_item_cardapio ,row.nome) for row in Item_cardapio_dao.findAll()]
     print(formModal.is_submitted())
     print(form.is_submitted())
     if formModal.is_submitted():
