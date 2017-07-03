@@ -1,0 +1,57 @@
+{% extends "masterpage.html" %}
+
+  {% block title %}Pedido{% endblock %}
+
+  {% block content %}
+
+  <section class="row">
+
+  	<div class="row text-center">
+
+  		<div class="tituloPagina">
+          <h1>Pedido</h1>
+      	</div>
+
+  	<!--http://fontawesome.io/icons/-->
+  		<div class="row topnoia">
+
+  			<div class="col-md-3"></div><!--Recurso Técnico de Design rsrsrs-->
+
+	  		<a href="{{ url_for('cadastro_compra') }}">
+		  	<div class="col-md-3">
+		  		<div id="1">
+		  			<i class="text-menu fa fa-pencil fa-5x" aria-hidden="true"></i>
+		  		</div>
+		  		<div class="text-menu text-center">
+		  			<label for="1" class="label-top">Cadastrar Pedido</label>				
+		  		</div>
+		     	
+		  	</div>
+		  	</a>
+
+		  	<a href="{{ url_for('lista_todos_compra') }}">
+		  	<div class="col-md-2 col-md-offset-0">
+		  		<div id="5">
+		  			<i class="text-menu fa fa-search fa-5x" aria-hidden="true"></i>
+		  		</div>
+		  		<div class="text-menu text-center">
+		  			<label for="5" class="label-top">Visualizar Pedido</label>				
+		  		</div>
+	        	   		
+		  	</div>
+		  	</a>
+
+		  	<div class="col-md-3"></div><!--Recurso Técnico de Design rsrsrs--> 
+
+		</div>
+
+		
+
+	</div>
+  	
+
+  </section>
+
+
+  {% block footer %}{% endblock %}
+  {% endblock %}

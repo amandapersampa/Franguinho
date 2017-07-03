@@ -11,7 +11,7 @@
           <h1>Cardápio</h1>
         </div>
 
-        <form action="" method="POST">
+        <form action="" id="form" name="form" onsubmit="return validateForm('form');" method="POST">
           {{ form.csrf_token }}
 
           <div class="form-group">
