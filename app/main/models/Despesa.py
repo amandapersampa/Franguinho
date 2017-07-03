@@ -16,6 +16,7 @@ class Despesa_dao(db.Model):
         self.descricao = descricao
         self.tipo = tipo
         self.date = date
+        self.nome = nome
 
 
     def salvar(self):
