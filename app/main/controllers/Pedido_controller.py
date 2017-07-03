@@ -15,10 +15,8 @@ def cadastro_pedido():
     form = Pedido_forms()
     formModal = modal_item_cardapio()
     formModal.item_cardapio.choices = [(row.id_item_cardapio ,row.nome) for row in Item_cardapio_dao.findAll()]
-    print(formModal.is_submitted())
-    print(form.is_submitted())
     if formModal.is_submitted():
-        print(formModal.quantidade.data)
+        formModal.item = Item_cardapio_dao.find_by_id(formModal.item_cardapio.data)
         form.item_cardapio.append(formModal)
         return redirect("pedido/cadastro")
 

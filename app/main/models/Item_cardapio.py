@@ -41,6 +41,10 @@ class Item_cardapio_dao(db.Model):
     def filter_nome(nome):
         return Item_cardapio_dao.query.filter_by(nome=nome).first()
 
+    @staticmethod
+    def find_by_id(id):
+        return Item_cardapio_dao.query.filter_by(id_item_cardapio=id).first()
+
     def __repr__(self):
         return str({"id_produto": self.id_produto, "nome": self.nome, "qtd_ingrediente": self.qtd_ingrediente,
                     "produto": self.produto, "valor":self.valor, "tipo_item" : self.tipo_item, "self.qtd_item_extra":self.qtd_item_extra})
