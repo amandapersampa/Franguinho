@@ -25,6 +25,7 @@
                     <table width="100%" class="table table-striped table-bordered table-hover" id="cardapioTab">
                         <thead>
                             <tr>
+                                <th>Código do Item</th>
                               <th>Item do Cardapio</th>
                               <th>Quantidade</th>
                               <th>Ações</th>
@@ -34,6 +35,7 @@
                           {% for item in form.item_cardapio %}
                             <tr>
                                 <td>{{item.item_cardapio.data}}</td>
+                                <td>{{item.item.nome}}</td>
                                 <td>{{item.quantidade.data}}</td>
                                    <td> <button> <span class="glyphicon glyphicon-trash"></span>
                                    </button>
