@@ -10,6 +10,10 @@ from app.main.forms.Despesa_forms import Despesa_forms
 
 service = Despesa_service()
 
+@app.route("/despesa")
+def despesa():
+    return render_template("despesa.html")
+
 @app.route("/despesa/list")
 def lista_despesa():
     service.findAll()
@@ -24,7 +28,6 @@ def lista_despesa():
 def cadastro_despesa():
     form = Despesa_forms()
     if form.is_submitted():
-
         item = Despesa_dao(form.valor.data, form.descricao.data, form.tipo.data, form.data.data, form.nome.data)
         service.salvar(item)
     return render_template('cadastro_despesa.html', form=form)
