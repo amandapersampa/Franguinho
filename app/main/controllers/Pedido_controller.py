@@ -1,8 +1,5 @@
-import json
 
-from builtins import print
-from flask import jsonify, render_template, redirect, url_for
-from pandas.core.internals import form_blocks
+from flask import render_template, redirect
 
 from app.main.forms.Pedido_forms import Pedido_forms
 from app.main.forms.modal_item_cardapio import modal_item_cardapio
@@ -12,7 +9,7 @@ from app import app
 
 @app.route("/pedido/cadastro", methods=["GET", "POST"])
 def cadastro_pedido():
-    form = Pedido_forms();
+    form = Pedido_forms()
     formModal = modal_item_cardapio()
     formModal.item_cardapio.choices = [(row.id_item_cardapio, row.nome) for row in Item_cardapio_dao.findAll()]
     print(formModal.is_submitted())
