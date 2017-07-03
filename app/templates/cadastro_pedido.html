@@ -8,7 +8,7 @@
 <form action="" method="POST">
   {{ form.csrf_token }}
   <div class="form-group">
-    <label>Data</label>
+    <label>Data do Pedido</label>
     {{ form.data(class="form-control", type="date" )}}
 
   </div>
@@ -25,21 +25,19 @@
                     <table width="100%" class="table table-striped table-bordered table-hover" id="cardapioTab">
                         <thead>
                             <tr>
-                              <th ng-repeat="titulo in titles">item Cardapio</th>
-                              <th ng-repeat="titulo in titles">Quantidade</th>
-                              <th ng-repeat="titulo in titles">Ações</th>
+                              <th>Item do Cardapio</th>
+                              <th>Quantidade</th>
+                              <th>Ações</th>
                             </tr>
                         </thead>
                         <tbody>
                           {% for item in form.item_cardapio %}
                             <tr>
-                                <td ng-if="item.col1">{{item.item_cardapio.data}}</td>
-                                <td ng-if="item.col2">{{item.quantidade.data}}</td>
-
-
-                                   <td> <button ng-click="remove()"> <span class="glyphicon glyphicon-trash"></span>
+                                <td>{{item.item_cardapio.data}}</td>
+                                <td>{{item.quantidade.data}}</td>
+                                   <td> <button> <span class="glyphicon glyphicon-trash"></span>
                                    </button>
-                                     <button ng-click="edit()"> <span class="glyphicon glyphicon-plus"></span>
+                                     <button> <span class="glyphicon glyphicon-plus"></span>
                                     </button> </td>
                                 </td>
                             </tr>
@@ -73,7 +71,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Cadastro do Item</h4>
+        <h4 class="modal-title" id="myModalLabel">Adicionar Item no Pedido</h4>
       </div>
 
       <div class="modal-body">

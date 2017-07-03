@@ -12,7 +12,7 @@ from app import app
 
 @app.route("/pedido/cadastro", methods=["GET", "POST"])
 def cadastro_pedido():
-    form = Pedido_forms();
+    form = Pedido_forms()
     formModal = modal_item_cardapio()
     formModal.item_cardapio.choices = [(row.id_item_cardapio, row.nome) for row in Item_cardapio_dao.findAll()]
     print(formModal.is_submitted())
