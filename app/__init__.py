@@ -9,8 +9,6 @@ import os
 from flask import render_template
 
 app = Flask(__name__)
-#app.config['SQLALCHEMY_DATABASE_URI'] = environ['DATABASE_URL']
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
 CORS(app)
 app.config.from_object('config')
@@ -42,6 +40,7 @@ if environ.get('HEROKU') is None:
 
 if os.environ.get('HEROKU') is not None:
     import logging
+    app.config['SQLALCHEMY_DATABASE_URI'] = environ['DATABASE_URL']
     stream_handler = logging.StreamHandler()
     app.logger.addHandler(stream_handler)
     app.logger.setLevel(logging.INFO)
