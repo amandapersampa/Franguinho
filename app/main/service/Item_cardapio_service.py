@@ -1,3 +1,4 @@
+# coding=utf-8
 from app.main.models.Item_cardapio import Item_cardapio_dao
 
 class Item_cardapio_service(object):
