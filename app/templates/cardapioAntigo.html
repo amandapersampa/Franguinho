@@ -1,0 +1,110 @@
+{% extends "masterpage.html" %}
+
+  {% block title %}Home{% endblock %}
+
+  {% block content %}
+
+  <section class="row">
+
+  	<div class="row text-center">
+
+  		<div class="tituloPagina">
+          <h1>Cardápio</h1>
+      	</div>
+
+  	<!--http://fontawesome.io/icons/-->
+  		<div class="row topnoia">
+
+  			<div class="col-md-3"></div><!--Recurso Técnico de Design rsrsrs-->
+
+	  		<a href="{{ url_for('cadastro_item_cardapio') }}">
+		  	<div class="col-md-3">
+		  		<div id="1">
+		  			<i class="text-menu fa fa-pencil fa-5x" aria-hidden="true"></i>
+		  		</div>
+		  		<div class="text-menu text-center">
+		  			<label for="1" class="label-top">Cadastrar Itens</label>				
+		  		</div>
+		     	
+		  	</div>
+		  	</a>
+
+		  	<a href="#">
+		  	<div class="col-md-3">
+		  		<div id="2">
+		  			<i class="text-menu fa fa-pencil fa-5x " aria-hidden="true"></i>
+		  			<i class="text-menu fa fa-plus" aria-hidden="true"></i>
+		  		</div>
+		  		<div class="text-menu text-center">
+		  			<label for="2" class="label-top">Cadastrar Itens Extras</label>				
+		  		</div>
+	        		
+		  	</div>
+		  	</a> 
+
+		  	<div class="col-md-3"></div><!--Recurso Técnico de Design rsrsrs--> 
+
+		</div>
+
+		<div class="row topnoia">
+
+			<div class="col-md-3"></div><!--Recurso Técnico de Design rsrsrs-->
+
+		  	<a href="#">
+		  	<div class="col-md-3">
+		  		<div id="3">
+		  			<i class="text-menu fa fa-list-alt fa-5x" aria-hidden="true"></i>
+		  		</div>
+		  		<div class="text-menu text-center">
+		  			<label for="3" class="label-top">Visualizar Itens</label>				
+		  		</div>
+	        	   		
+		  	</div>
+		  	</a>
+
+
+			<a href="#">
+		  	<div class="col-md-3">
+		  		<div id="4">
+		  			<i class="text-menu fa fa-list-alt fa-5x" aria-hidden="true"></i>
+		  			<i class="text-menu fa fa-plus" aria-hidden="true"></i>
+		  		</div>
+		  		<div class="text-menu text-center">
+		  			<label for="4" class="label-top">Visualizar Itens Extras</label>
+
+		  		</div>
+	        	 	  		
+		  	</div>
+		  	</a> 
+
+		  	<div class="col-md-3"></div><!--Recurso Técnico de Design rsrsrs-->
+
+		</div>
+
+		<div class="row topnoia">
+
+			<div class="col-md-5"></div><!--Recurso Técnico de Design rsrsrs-->
+
+		  	<a href="{{ url_for('lista_todos') }}">
+		  	<div class="col-md-2 col-md-offset-0">
+		  		<div id="5">
+		  			<i class="text-menu fa fa-book fa-5x" aria-hidden="true"></i>
+		  		</div>
+		  		<div class="text-menu text-center">
+		  			<label for="5" class="label-top">Visualizar Cardápio</label>				
+		  		</div>
+	        	   		
+		  	</div>
+		  	</a>
+
+		  	<div class="col-md-5"></div><!--Recurso Técnico de Design rsrsrs-->
+		</div>
+
+	</div>
+  	
+
+  </section>
+
+  {% block footer %}{% endblock %}
+
+  {% endblock %}

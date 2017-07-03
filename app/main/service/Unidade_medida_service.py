@@ -6,7 +6,7 @@ class Unidade_medida_service(object):
         u = self.filter_nome(unidade.nome)
         if u == None:
             unidade.salvar()
-            return {'mensagem': 'Unidade cadastrado com sucesso'}
+            return {'mensagem': 'Unidade cadastrada com sucesso'}
         else:
             return {'mensagem': 'Nome de Unidade ja cadastrado'}
 

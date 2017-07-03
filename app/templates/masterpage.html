@@ -41,37 +41,39 @@
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 						<span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
 					</button>
-					<img class="navbar-brand" id="imagemnavegador" src="{{url_for('static',filename='imagens/inicial.png')}}">
-					<a class="navbar-brand" href="#"> MicroGerApp </a>
+					<img class="img-responsive" id="imagemnavegador" src="{{url_for('static',filename='imagens/inicial.png')}}">
 				</div>
 
 
 
 				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<div class="collapse navbar-collapse add" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-left">
 						<li class="hidden">
 							<a href="#page-top"></a>
 						</li>
 						<li class="page-scroll">
+							<a href="{{ url_for('teste') }}">Home</a>
+						</li>
+						<li class="page-scroll">
 							<a href="#">Pedido</a>
 						</li>
 						<li class="page-scroll">
-							<a href="#">Produto</a>
+							<a href="{{ url_for('produto') }}">Produto</a>
 						</li>
 						<li class="page-scroll">
-							<a href="#">Compra</a>
+							<a href="{{ url_for('compra') }}">Compra</a>
 						</li>
 						<li class="page-scroll">
-							<a href="#">Cardápio</a>
+							<a href="{{ url_for('cardapio') }}">Cardápio</a>
 						</li>
 						<li class="page-scroll">
 							<a href="#">Relatório</a>
 						</li>
 						<li class="page-scroll">
-							<a href="#">Estoque</a>
+							<a href="{{ url_for('lista_todos') }}">Estoque</a>
 						</li>
-						<li class="dropdown">
+						<!--<li class="dropdown">
 							<a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1
 							<span class="caret"></span></a>
 							<ul class="dropdown-menu">
@@ -79,7 +81,7 @@
 							  <li><a href="#">Page 1-2</a></li>
 							  <li><a href="#">Page 1-3</a></li>
 							</ul>
-						</li>
+						</li>-->
 						<li class="page-scroll">
 							<a href="#"><span class="glyphicon glyphicon-log-in"></span> Sair </a>
 						</li>
@@ -110,14 +112,23 @@
 		<footer id="rodape center-block ">
 
 			<div class="row center-block footer navbar-bottom">
-				<div class="text-rodape col-md-11 col-sm-11 col-xs-10">
+				
+				<div class="text-rodape">
 					<ul><li class="divisor"></li></ul>
-					<img src="{{url_for('static',filename='imagens/logo.png')}}">
-					<a href="#" target="_blank" class="text-rodape "> MicroGerApp </a>
+
+					<div class="col-md-6 col-sm-6 col-xs-6">
+						<a href="#" class="text-rodape pull-right"><img src="{{url_for('static',filename='imagens/logo.png')}}"></a>
+					</div>
+					
+					<div class="col-md-6 col-sm-6 col-xs-6">
+						<a href="https://www.facebook.com/FastFrango" target="_blank" class="text-rodape pull-left"><i class="text-menu fa fa-facebook-square fa-4x" aria-hidden="true"></i></a>
+					</div>
+
 				</div>
 			</div>
 
 		</footer>
+		{% endblock %}
 
 
 		<!-- jQuery -->
@@ -125,12 +136,14 @@
 		<script src="{{url_for('static',filename='jquery/jquery.min.js')}}"></script>
 		<script src="{{url_for('static',filename='jquery/jquery.js')}}" type="text/javascript"></script>
 		<script src="{{url_for('static',filename='jquery/jqueryview.js')}}" type="text/javascript"></script>
+		<script src="{{url_for('static',filename='jquery/javaScript.js')}}" type="text/javascript"></script>
+		<script src="{{url_for('static',filename='jquery/bootbox.min.js')}}" type="text/javascript"></script>
 
 
 		<!-- Bootstrap Core JavaScript -->
 
 		<script src="{{url_for('static',filename='bootstrap/js/bootstrap.min.js')}}"></script>
-		{% endblock %}
+		
 	</body>
 </html>
 

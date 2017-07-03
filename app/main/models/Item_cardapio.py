@@ -41,4 +41,4 @@ class Item_cardapio_dao(db.Model):
 
     def __repr__(self):
         return str({"id_produto": self.id_produto, "nome": self.nome, "qtd_ingrediente": self.qtd_ingrediente,
-                    "produto": self.produto.nome,"valor":self.valor,"tipo_item" : self.tipo_item,"self.qtd_item_extra":self.qtd_item_extra})
+                    "produto": self.produto, "valor":self.valor, "tipo_item" : self.tipo_item, "self.qtd_item_extra":self.qtd_item_extra})

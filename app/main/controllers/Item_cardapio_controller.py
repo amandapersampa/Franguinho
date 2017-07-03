@@ -1,6 +1,6 @@
 import json
 
-from flask import jsonify, render_template
+from flask import jsonify, render_template,flash,redirect,url_for
 
 from app import app
 from app.main.service.Item_cardapio_service import Item_cardapio_service
@@ -10,6 +10,10 @@ from app.main.forms.Item_cardapio_forms import Item_cardapio_forms
 
 service = Item_cardapio_service()
 
+@app.route("/cardapio")
+def cardapio():
+    return render_template("cardapio.html")
+
 @app.route("/itemCardapio/list")
 def lista_Item_cardapio():
     service.findAll()
@@ -18,7 +22,7 @@ def lista_Item_cardapio():
   }
     resultado = service.findAll()
     print(resultado)
-    return render_template("listar_Item_cardapio.html", nome=nome, resultado=resultado)
+    return render_template("lista_Item_cardapio.html", nome=nome, resultado=resultado)
 
 
 @app.route("/itemCardapio/cadastro", methods=["GET", "POST"])

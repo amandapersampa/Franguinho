@@ -9,7 +9,6 @@
                 <h1>Cadastro de Unidade Medida</h1>
             </div>
 			<div class="col-md-4 col-md-offset-4">
-			<h2>Cadastro</h2>
 			<form action="" method="POST">
 			  {{ form.csrf_token }}
 			  <div class="form-group">
@@ -22,4 +21,5 @@
 			</form>
 			</div>
 	</section>
+	{% block footer %}{% endblock %}
 	{% endblock %}

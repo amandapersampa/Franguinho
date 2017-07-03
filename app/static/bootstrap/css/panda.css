@@ -1,11 +1,23 @@
+.add{
+  margin-top: 13px;
+  text-decoration-color: #23485B;
+}
+.img-capa{
+  margin-top:20px;
+  margin-bottom:0px;
+  vertical-align: middle;
+  text-align: center;
+  align-items: center;
+  /*border: 1px solid green;*/
+}
+.alert{
+  margin-top: 5px;
+}
 .tituloPagina{
   margin-top: 80px;
   margin-bottom: 40px;
 }
 
-.imagembotton{
-  margin-bottom: 20px;
-}
 .text-menu{
     color: #23485B;
 }
@@ -18,8 +30,12 @@
   margin-top: 45px;
 }
 
+.topnoia{
+  vertical-align: middle;
+}
 .topnois{
-  margin-top: 50px;
+  margin-top: 10px;
+  margin-bottom: 40px;
 }
 
 #rodape{
@@ -42,15 +58,23 @@
     margin-left: 5px;
     color: #23485B;
     /*border: 1px solid green;*/
+    vertical-align: middle;
     text-align: center;
+    align-items: center;
 }
 
 .text-rodape:hover{
     margin-left: 5px;
-    color: rgba(0,0,0,.6);
+    color: #AC2641;
     text-decoration-line: none;
+    vertical-align: middle;
+    text-align: center;
+    align-items: center;
 }
-
+.text-rodape ul{
+  list-style:none;
+  list-style-type:none;
+}
 .text-rodape li{
   list-style-type:none;
 }

@@ -1,7 +1,7 @@
 # coding=utf-8
 
 from flask import jsonify
-from flask import render_template
+from flask import render_template,flash,redirect,url_for
 
 from app import app
 from app.main.forms.Produto_forms import Produto_forms
@@ -15,14 +15,18 @@ service = Produto_service()
 def teste():
     return render_template("home.html")
 
+@app.route("/produto")
+def produto():
+    return render_template("produto.html")
+
 @app.route("/produto/list")
 def lista_todos():
     service.findAll()
     nome={
-    "titles": ["Código", "Produto", "Quantidade", "Unidade", "Valor", "Data da Compra", "Ações"]
+    "titles": ["Código", "Produto", "Quantidade", "Unidade", "Ações"]
   }
     resultado = service.findAll()
-    return render_template("Listar.html", nome=nome, produtos=resultado)
+    return render_template("listar_produto.html", nome=nome, produtos=resultado)
 
 
 @app.route("/produto/<id>")

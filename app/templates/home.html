@@ -8,9 +8,11 @@
 
   <section class="row">
 
-	<div class="container col-md-12 col-md-offset-4 imagembotton">
-		<img src="{{url_for('static',filename='imagens/HOME.png')}}">
-	</div>
+  	<div class="container">
+  		<div class="img-capa">
+		<img src="{{url_for('static',filename='imagens/HOME.png')}}" class="center-block img-responsive">
+		</div>  		
+  	</div>
 
 
   	<div class="row topnois text-center">
@@ -29,7 +31,7 @@
 	  	</div>
 	  	</a>
 
-	  	<a href="#">
+	  	<a href="{{ url_for('lista_todos') }}">
 	  	<div class="topicone col-md-2 col-sm-2 col-xs-12 col-sm-3">
 	  		<div id="2">
 	  			<i class="text-menu fa fa-stack-overflow fa-5x" aria-hidden="true"></i>
@@ -41,7 +43,7 @@
 	  	</div>
 	  	</a>  	
 
-	  	<a href="#">
+	  	<a href="{{ url_for('cardapio') }}">
 	  	<div class="topicone col-md-2 col-sm-2 col-xs-12 col-sm-3">
 	  		<div id="3">
 	  			<i class="text-menu fa fa-list-alt fa-5x" aria-hidden="true"></i>
@@ -66,7 +68,7 @@
 	  	</div>
 	  	</a> 
 
-	  	<a href="#">
+	  	<a href="{{ url_for('lista_todos_compra') }}">
 	  	<div class="topicone col-md-2 col-sm-2 col-xs-12">
 	  		<div id="5">
 	  			<i class="text-menu fa fa-bar-chart fa-5x" aria-hidden="true"></i>
