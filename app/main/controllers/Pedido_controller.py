@@ -1,4 +1,3 @@
-import json
 
 #from builtins import print
 from flask import jsonify, render_template, redirect, url_for
