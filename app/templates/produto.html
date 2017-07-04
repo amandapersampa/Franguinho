@@ -1,0 +1,91 @@
+{% extends "masterpage.html" %}
+
+  {% block title %}Produto{% endblock %}
+
+  {% block content %}
+
+  <section class="row">
+
+  	<div class="row text-center">
+
+  		<div class="tituloPagina">
+          <h1>Produto</h1>
+      	</div>
+
+  	<!--http://fontawesome.io/icons/-->
+  		<div class="row topnoia">
+
+  			<div class="col-md-3"></div><!--Recurso Técnico de Design rsrsrs-->
+
+	  		<a href="{{ url_for('cadastro') }}">
+		  	<div class="col-md-3">
+		  		<div id="1">
+		  			<i class="text-menu fa fa-pencil fa-5x" aria-hidden="true"></i>
+		  		</div>
+		  		<div class="text-menu text-center">
+		  			<label for="1" class="label-top">Cadastrar Produto</label>				
+		  		</div>
+		     	
+		  	</div>
+		  	</a>
+
+		  	<a href="{{ url_for('lista_todos') }}">
+		  	<div class="col-md-2 col-md-offset-0">
+		  		<div id="5">
+		  			<i class="text-menu fa fa-search fa-5x" aria-hidden="true"></i>
+		  		</div>
+		  		<div class="text-menu text-center">
+		  			<label for="5" class="label-top">Visualizar Produto</label>				
+		  		</div>
+	        	   		
+		  	</div>
+		  	</a>
+
+		  	<div class="col-md-3"></div><!--Recurso Técnico de Design rsrsrs--> 
+
+		</div>
+
+		<div class="row topicone">
+
+  			<div class="col-md-3"></div><!--Recurso Técnico de Design rsrsrs-->
+
+	  		<a href="{{ url_for('cadastro_unidade_medida') }}">
+		  	<div class="col-md-3">
+		  		<div id="1">
+		  			<i class="text-menu fa fa-percent fa-5x" aria-hidden="true"></i>
+		  		</div>
+		  		<div class="text-menu text-center">
+		  			<label for="1" class="label-top">Cadastrar Unidade Medida</label>				
+		  		</div>
+		     	
+		  	</div>
+		  	</a>
+
+		  	<a href="{{ url_for('findAll_unidade') }}">
+		  	<div class="col-md-2 col-md-offset-0">
+		  		<div id="5">
+		  			<i class="text-menu fa fa-file-text fa-5x" aria-hidden="true"></i>
+		  		</div>
+		  		<div class="text-menu text-center">
+		  			<label for="5" class="label-top">Visualizar Unidade Medida</label>				
+		  		</div>
+	        	   		
+		  	</div>
+		  	</a>
+
+		  	<div class="col-md-3"></div><!--Recurso Técnico de Design rsrsrs--> 
+
+		</div>
+
+		
+
+	</div>
+  	
+
+  </section>
+
+  {% block footer %}{% endblock %}
+
+
+
+  {% endblock %}

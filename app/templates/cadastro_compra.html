@@ -1,0 +1,51 @@
+{% extends "masterpage.html" %}
+
+  {% block title %}Cadastro Compra{% endblock %}
+
+  {% block content %}
+
+    <section class="container">
+            
+      <div class="tituloPagina col-md-offset-4">
+          <h1>Cadastro de Compra</h1>
+      </div>
+        
+      <div class="col-md-4 col-md-offset-4">
+        <form action="" id="form" name="form" onsubmit="return validateForm('form');"  method="POST">
+          {{ form.csrf_token }}
+          <div class="form-group">
+            <label>Data</label>
+            {{ form.data(class="form-control", type="date" )}}
+
+          </div>
+          <div class="form-group">
+            <label>Nome Produto</label>
+            {{ form.produto(class="form-control" )}}
+
+          </div>
+          <div class="form-group">
+            <label>Quantidade</label>
+           {{ form.quantidade(class="form-control" , type="number") }}
+            {% if form.errors.quantidade %}
+              <div class="alert alert-danger">
+                <strong>Erro</strong> Esse é um campo obrigatório.
+              </div>
+            {% endif %}
+
+          </div>
+          <div class="form-group">
+            <label>Valor</label>
+            {{ form.valor(class="form-control", type="number") }}
+            {% if form.errors.valor %}
+              <div class="alert alert-danger">
+                <strong>Erro</strong> Esse é um campo obrigatório.
+              </div>
+            {% endif %}
+          </div>
+
+          <button type="submit" class="btn btn-default">Cadastrar</button>
+        </form>
+       </div>
+    </section>
+    {% block footer %}{% endblock %}
+  {% endblock %}
