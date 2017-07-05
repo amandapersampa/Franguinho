@@ -8,12 +8,9 @@ from app.main.forms.Produto_forms import Produto_forms
 from app.main.models.Produto import Produto_dao
 from app.main.service.Produto_service import Produto_service
 from app.main.service.Unidade_medida_service import Unidade_medida_service
+from app.main.util import to_string
 
 service = Produto_service()
-
-@app.route("/")
-def teste():
-    return render_template("home.html")
 
 @app.route("/produto")
 def produto():
@@ -21,12 +18,13 @@ def produto():
 
 @app.route("/produto/list")
 def lista_todos():
-    service.findAll()
-    nome={
-    "titles": ["Código", "Produto", "Quantidade", "Unidade", "Ações"]
+    page={
+    "titles": ["Código", "Produto", "Quantidade", "Unidade"],
+        "header": "Produtos",
+        "table": "Produtos Cadastrados"
   }
-    resultado = service.findAll()
-    return render_template("listar_produto.html", nome=nome, produtos=resultado)
+    resultados = create_cols(service.findAll())
+    return render_template("listar.html", page=page, resultados=resultados)
 
 
 @app.route("/produto/<id>")
@@ -52,3 +50,14 @@ def cadastro():
         service.salvar(produto)
 
     return render_template('cadastroProduto.html', form=form)
+
+def create_cols(list):
+    lista = []
+    for i in range(len(list)):
+        resultado = dict()
+        resultado['col1'] = to_string(list[i].id_produto)
+        resultado['col2'] = to_string(list[i].nome)
+        resultado['col3'] = to_string(list[i].quantidade)
+        resultado['col5'] = to_string(list[i].unidade.nome)
+        lista.append(resultado)
+    return lista

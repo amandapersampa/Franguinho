@@ -6,6 +6,7 @@ from app import app
 from app.main.forms.Unidade_medida_forms import Unidade_medida_forms
 from app.main.models.Unidade_medida import Unidade_medida_dao
 from app.main.service.Unidade_medida_service import Unidade_medida_service
+from app.main.util import to_string
 
 service = Unidade_medida_service()
 
@@ -16,11 +17,13 @@ def salva_unidade_medida():
 
 @app.route("/unidadeMedida/list")
 def findAll_unidade():
-    resultado = service.findAll()
-    nome = {
-        "titles": ["Código", "Unidade", "Ações"],
+    resultados = create_cols(service.findAll())
+    page = {
+        "titles": ["Código", "Unidade"],
+        "header": "Unidade de Medida",
+        "table": "Unidades de Medidas Cadastradas"
     }
-    return render_template("lista_unidade_medida.html", nome=nome, produtos=resultado)
+    return render_template("listar.html", page=page, resultados=resultados)
 
 
 @app.route("/unidadeMedida/<id>")
@@ -38,3 +41,12 @@ def cadastro_unidade_medida():
         service.salvar(unidade)
 
     return render_template('cadastro_unidade_medida.html', form=form)
+
+def create_cols(list):
+    lista = []
+    for i in range(len(list)):
+        resultado = dict()
+        resultado['col1'] = to_string(list[i].id_unidade_medida)
+        resultado['col2'] = to_string(list[i].nome)
+        lista.append(resultado)
+    return lista

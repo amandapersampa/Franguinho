@@ -56,4 +56,6 @@ from app.main.controllers import Unidade_medida_controller
 from app.main.controllers import Item_cardapio_controller
 from app.main.controllers import  Pedido_controller
 from app.main.controllers import Despesa_controller
+from app.main.controllers import home_controller
+from app.main.controllers import estoque_controller
 from app.main.service import Compra_service
